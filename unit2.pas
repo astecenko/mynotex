@@ -457,11 +457,9 @@ begin
         begin
           // Add subject
           SubNotesText := sqReadSubjects.FieldByName('SubjectsName').AsString;
-          // Clear < and >, to prevent HTML breaking
-          while Pos('<', SubNotesText) > 0 do
-            SubNotesText[Pos('<', SubNotesText)] := '(';
-          while Pos('>', SubNotesText) > 0 do
-            SubNotesText[Pos('>', SubNotesText)] := ')';
+          SubNotesText := StringReplace(SubNotesText, '&', '&amp;', [rfReplaceAll]);
+          SubNotesText := StringReplace(SubNotesText, '<', '&lt;', [rfReplaceAll]);
+          SubNotesText := StringReplace(SubNotesText, '>', '&gt;', [rfReplaceAll]);
           WriteLn(myFile, '<H1>' + SubNotesText + '</H1>');
           pbProgressBar.Position := pbProgressBar.Position + 1;
           Application.ProcessMessages;
@@ -481,11 +479,9 @@ begin
           begin
             // Add title
             SubNotesText := sqReadNotes.FieldByName('NotesTitle').AsString;
-            // Clear < and >, to prevent HTML breaking in title
-            while Pos('<', SubNotesText) > 0 do
-              SubNotesText[Pos('<', SubNotesText)] := '(';
-            while Pos('>', SubNotesText) > 0 do
-              SubNotesText[Pos('>', SubNotesText)] := ')';
+            SubNotesText := StringReplace(SubNotesText, '&', '&amp;', [rfReplaceAll]);
+            SubNotesText := StringReplace(SubNotesText, '<', '&lt;', [rfReplaceAll]);
+            SubNotesText := StringReplace(SubNotesText, '>', '&gt;', [rfReplaceAll]);
             WriteLn(myFile, '<H2>' + SubNotesText + '</H2>');
             // Add date
             if cbNoExpDate.Checked = True then
@@ -496,9 +492,6 @@ begin
             if sqReadNotes.FieldByName('NotesCheckPwd').AsString = '' then
             begin
               SubNotesText := sqReadNotes.FieldByName('NotesText').AsString;
-              // Restore > and <
-              SubNotesText := StringReplace(SubNotesText, #5, '&lt;', [rfReplaceAll]);
-              SubNotesText := StringReplace(SubNotesText, #6, '&gt;', [rfReplaceAll]);
               // Set font size in html format (from 1 to 7)
               for FnSize := 6 to 72 do
               begin
@@ -616,6 +609,8 @@ begin
             begin
               SubNotesText := fmMain.msg039;
             end;
+            SubNotesText := StringReplace(SubNotesText, #5, '&lt;', [rfReplaceAll]);
+            SubNotesText := StringReplace(SubNotesText, #6, '&gt;', [rfReplaceAll]);
             WriteLn(myFile, SubNotesText);
             // Copy pictures
             n := 0;

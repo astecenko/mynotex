@@ -107,6 +107,8 @@ begin
   // Move note
   try
     try
+      Screen.Cursor := crHourGlass;
+      Application.ProcessMessages;
       sqMove := TSqlite3Dataset.Create(Self);
       sqMove.FileName := fmMain.sqNotes.FileName;
       sqMove.TableName := 'Notes';
@@ -213,6 +215,7 @@ begin
       Close;
     finally
       sqMove.Free;
+      Screen.Cursor := crDefault;
     end;
   except
     MessageDlg(fmMain.msg027, mtWarning, [mbOK], 0);

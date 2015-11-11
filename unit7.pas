@@ -48,6 +48,7 @@ type
     bnOptBack2: TButton;
     bnOptFont3: TButton;
     bnOptBack3: TButton;
+    bnOptionsFormClDef: TButton;
     bvFrame: TBevel;
     bnOptionsFont: TButton;
     bnOptionsSyncDir: TButton;
@@ -74,6 +75,7 @@ type
     procedure bnOptFont2Click(Sender: TObject);
     procedure bnOptFont3Click(Sender: TObject);
     procedure bnOptionsFontClick(Sender: TObject);
+    procedure bnOptionsFormClDefClick(Sender: TObject);
     procedure bnOptionsFormColorClick(Sender: TObject);
     procedure bnOptionsOKClick(Sender: TObject);
     procedure bnOptionsSyncDirClick(Sender: TObject);
@@ -168,6 +170,29 @@ begin
     fmOptions.lbOptionsFormColor.Caption :=
       fmMain.cpt047 + ' ' + ColorToString(fmMain.fdColorDialog.Color);
   end;
+end;
+
+procedure TfmOptions.bnOptionsFormClDefClick(Sender: TObject);
+begin
+  // Set default color
+  fmMain.Color := clDefault;
+  fmMain.grSubjects.FixedColor := clBtnFace;
+  fmMain.grTitles.FixedColor := clBtnFace;
+  fmMain.grActGrid.FixedColor := clBtnFace;
+  fmMain.grFilter.FixedColor := clBtnFace;
+  fmCalendar.grCalGrid.FixedColor := clBtnFace;
+  fmMain.dbSubComm.Color := clDefault;
+  fmImpExp.Color := clDefault;
+  fmMoveNote.Color := clDefault;
+  fmCommentsSubjects.Color := clDefault;
+  fmEncryption.Color := clDefault;
+  fmResizeImage.Color := clDefault;
+  fmLook.Color := clDefault;
+  fmCalendar.Color := clDefault;
+  fmOptions.Color := clDefault;
+  fmCopyright.Color := clDefault;
+  fmOptions.lbOptionsFormColor.Caption :=
+    fmMain.cpt047 + ' clDefault';
 end;
 
 procedure TfmOptions.bnOptionsSyncDirClick(Sender: TObject);

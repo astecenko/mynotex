@@ -152,7 +152,7 @@ object fmCopyright: TfmCopyright
   OnCreate = FormCreate
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.4.0.4'
+  LCLVersion = '1.4.4.0'
   object imImagecopyright: TImage
     Left = 13
     Height = 128
@@ -887,8 +887,8 @@ object fmCopyright: TfmCopyright
     Left = 142
     Height = 28
     Top = 24
-    Width = 195
-    Caption = 'MyNotex 1.3.1'
+    Width = 221
+    Caption = 'MyNotex 1.3.1.1'
     Font.Height = -24
     Font.Style = [fsBold]
     ParentColor = False

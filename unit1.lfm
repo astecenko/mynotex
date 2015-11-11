@@ -1,14 +1,14 @@
 object fmMain: TfmMain
   Left = 472
-  Height = 710
+  Height = 707
   Top = 197
-  Width = 1317
+  Width = 1019
   ActiveControl = pnGridSubjects
   AllowDropFiles = True
   AlphaBlend = True
   Caption = 'MyNotex'
-  ClientHeight = 686
-  ClientWidth = 1317
+  ClientHeight = 683
+  ClientWidth = 1019
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
     0000400000000100200000000000001000006400000064000000000000000000
@@ -156,12 +156,12 @@ object fmMain: TfmMain
   OnResize = FormResize
   OnShow = FormShow
   OnWindowStateChange = FormWindowStateChange
-  LCLVersion = '1.4.0.4'
+  LCLVersion = '1.4.4.0'
   object imBackground: TImage
     Left = 175
-    Height = 527
+    Height = 524
     Top = 34
-    Width = 1142
+    Width = 844
     Align = alClient
     Center = True
     Picture.Data = {
@@ -955,8 +955,8 @@ object fmMain: TfmMain
   object sbStatusBar: TStatusBar
     Left = 0
     Height = 20
-    Top = 666
-    Width = 1317
+    Top = 663
+    Width = 1019
     Panels = <    
       item
         Width = 400
@@ -971,12 +971,12 @@ object fmMain: TfmMain
   object pnFind: TPanel
     Left = 0
     Height = 100
-    Top = 566
-    Width = 1317
+    Top = 563
+    Width = 1019
     Align = alBottom
     BevelOuter = bvNone
     ClientHeight = 100
-    ClientWidth = 1317
+    ClientWidth = 1019
     Constraints.MinHeight = 100
     TabOrder = 2
     TabStop = True
@@ -985,7 +985,7 @@ object fmMain: TfmMain
       Left = 305
       Height = 94
       Top = 4
-      Width = 1010
+      Width = 712
       Align = alClient
       BorderSpacing.Top = 2
       BorderSpacing.Around = 2
@@ -1045,7 +1045,7 @@ object fmMain: TfmMain
       object bnFind: TBitBtn
         Left = 264
         Height = 32
-        Top = 42
+        Top = 37
         Width = 32
         Anchors = [akTop, akRight]
         Glyph.Data = {
@@ -1092,7 +1092,7 @@ object fmMain: TfmMain
       Left = 303
       Height = 100
       Top = 0
-      Width = 1014
+      Width = 716
       Align = alClient
       Columns = <>
       DataSource = dsFind
@@ -1106,29 +1106,29 @@ object fmMain: TfmMain
   end
   object spSplitterSubjects: TSplitter
     Left = 170
-    Height = 527
+    Height = 524
     Top = 34
     Width = 5
   end
   object pnNotes: TPanel
     Left = 175
-    Height = 527
+    Height = 524
     Top = 34
-    Width = 1142
+    Width = 844
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 527
-    ClientWidth = 1142
+    ClientHeight = 524
+    ClientWidth = 844
     TabOrder = 1
     object pnNotesTop: TPanel
       Left = 0
-      Height = 112
+      Height = 124
       Top = 0
-      Width = 1142
+      Width = 844
       Align = alTop
       BevelOuter = bvNone
-      ClientHeight = 112
-      ClientWidth = 1142
+      ClientHeight = 124
+      ClientWidth = 844
       TabOrder = 0
       object lbTitle: TLabel
         Left = 3
@@ -1140,7 +1140,7 @@ object fmMain: TfmMain
         ParentColor = False
       end
       object lbDate: TLabel
-        Left = 789
+        Left = 480
         Height = 20
         Top = 1
         Width = 69
@@ -1152,15 +1152,15 @@ object fmMain: TfmMain
       object lbTags: TLabel
         Left = 3
         Height = 20
-        Top = 53
-        Width = 798
+        Top = 59
+        Width = 500
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         Caption = 'Tags (separated by commas)'
         ParentColor = False
       end
       object lbListAttach: TLabel
-        Left = 932
+        Left = 634
         Height = 20
         Top = 1
         Width = 164
@@ -1172,8 +1172,8 @@ object fmMain: TfmMain
       object dbTitle: TDBEdit
         Left = 3
         Height = 27
-        Top = 21
-        Width = 769
+        Top = 23
+        Width = 463
         DataField = 'NotesTitle'
         DataSource = dsNotes
         Anchors = [akTop, akLeft, akRight]
@@ -1185,10 +1185,10 @@ object fmMain: TfmMain
         OnKeyPress = dbTitleKeyPress
       end
       object dbDate: TDBZVDateTimePicker
-        Left = 789
+        Left = 480
         Height = 27
-        Top = 21
-        Width = 123
+        Top = 23
+        Width = 134
         DataField = 'NotesDate'
         DataSource = dsNotes
         ReadOnly = False
@@ -1217,10 +1217,10 @@ object fmMain: TfmMain
         OnKeyPress = dbDateKeyPress
       end
       object dbNavigator: TDBNavigator
-        Left = 789
+        Left = 480
         Height = 27
-        Top = 74
-        Width = 123
+        Top = 82
+        Width = 134
         Anchors = [akTop, akRight]
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -1230,7 +1230,7 @@ object fmMain: TfmMain
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 100
         ClientHeight = 27
-        ClientWidth = 123
+        ClientWidth = 134
         DataSource = dsNotes
         Flat = True
         Options = []
@@ -1240,8 +1240,8 @@ object fmMain: TfmMain
       object dbTags: TDBEdit
         Left = 3
         Height = 27
-        Top = 74
-        Width = 769
+        Top = 82
+        Width = 463
         DataField = 'NotesTags'
         DataSource = dsNotes
         Anchors = [akTop, akLeft, akRight]
@@ -1252,9 +1252,9 @@ object fmMain: TfmMain
         OnKeyPress = dbTagsKeyPress
       end
       object lbAttNames: TListBox
-        Left = 932
-        Height = 79
-        Top = 22
+        Left = 634
+        Height = 86
+        Top = 23
         Width = 204
         Anchors = [akTop, akRight]
         ExtendedSelect = False
@@ -1273,33 +1273,33 @@ object fmMain: TfmMain
     end
     object spSplitterNotes: TSplitter
       Left = 170
-      Height = 415
-      Top = 112
+      Height = 400
+      Top = 124
       Width = 5
     end
     object pnTextTags: TPanel
       Left = 175
-      Height = 415
-      Top = 112
-      Width = 967
+      Height = 400
+      Top = 124
+      Width = 669
       Align = alClient
       BevelOuter = bvNone
-      ClientHeight = 415
-      ClientWidth = 967
+      ClientHeight = 400
+      ClientWidth = 669
       TabOrder = 1
       object pnFindText: TPanel
         Left = 0
         Height = 34
-        Top = 190
-        Width = 967
+        Top = 175
+        Width = 669
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 34
-        ClientWidth = 967
+        ClientWidth = 669
         TabOrder = 1
         Visible = False
         object bnFindFirst: TButton
-          Left = 595
+          Left = 297
           Height = 27
           Top = 3
           Width = 180
@@ -1309,7 +1309,7 @@ object fmMain: TfmMain
           TabOrder = 1
         end
         object bnFindNext: TButton
-          Left = 781
+          Left = 483
           Height = 27
           Top = 3
           Width = 180
@@ -1322,7 +1322,7 @@ object fmMain: TfmMain
           Left = 5
           Height = 27
           Top = 3
-          Width = 574
+          Width = 276
           Anchors = [akTop, akLeft, akRight]
           AutoSize = False
           OnKeyPress = edLocateTextKeyPress
@@ -1330,8 +1330,8 @@ object fmMain: TfmMain
         end
       end
       object pnAttachments: TPanel
-        Left = 758
-        Height = 179
+        Left = 460
+        Height = 164
         Top = 0
         Width = 203
         Align = alRight
@@ -1339,7 +1339,7 @@ object fmMain: TfmMain
         BorderSpacing.Right = 6
         BorderSpacing.Bottom = 6
         BevelOuter = bvNone
-        ClientHeight = 179
+        ClientHeight = 164
         ClientWidth = 203
         TabOrder = 2
         object lbListTags: TLabel
@@ -1354,7 +1354,7 @@ object fmMain: TfmMain
         end
         object lbTagsNames: TListBox
           Left = 0
-          Height = 159
+          Height = 144
           Top = 20
           Width = 203
           Align = alClient
@@ -1363,14 +1363,13 @@ object fmMain: TfmMain
           OnExit = lbTagsNamesExit
           ParentColor = True
           ScrollWidth = 201
-          Sorted = True
           TabOrder = 0
           TopIndex = -1
         end
       end
       object spSplitterAtt: TSplitter
-        Left = 747
-        Height = 185
+        Left = 449
+        Height = 170
         Top = 0
         Width = 5
         Align = alRight
@@ -1378,21 +1377,21 @@ object fmMain: TfmMain
       end
       object pnText: TPanel
         Left = 0
-        Height = 185
+        Height = 170
         Top = 0
-        Width = 747
+        Width = 449
         Align = alClient
         BevelOuter = bvNone
-        ClientHeight = 185
-        ClientWidth = 747
+        ClientHeight = 170
+        ClientWidth = 449
         ParentColor = False
         TabOrder = 0
         object dbText: TRichMemo
           Cursor = crIBeam
           Left = 6
-          Height = 179
+          Height = 164
           Top = 0
-          Width = 735
+          Width = 437
           Align = alClient
           BorderSpacing.Left = 6
           BorderSpacing.Right = 6
@@ -1487,18 +1486,18 @@ object fmMain: TfmMain
       object pnActivities: TPanel
         Left = 0
         Height = 191
-        Top = 224
-        Width = 967
+        Top = 209
+        Width = 669
         Align = alBottom
         ClientHeight = 191
-        ClientWidth = 967
+        ClientWidth = 669
         TabOrder = 4
         Visible = False
         object grActGrid: TStringGrid
           Left = 1
           Height = 69
           Top = 35
-          Width = 965
+          Width = 667
           Align = alClient
           ExtendedSelect = False
           Flat = True
@@ -1519,7 +1518,7 @@ object fmMain: TfmMain
           Left = 1
           Height = 34
           Top = 1
-          Width = 965
+          Width = 667
           AutoSize = True
           ButtonHeight = 32
           ButtonWidth = 32
@@ -1689,7 +1688,7 @@ object fmMain: TfmMain
           Left = 1
           Height = 5
           Top = 104
-          Width = 965
+          Width = 667
           Align = alBottom
           ResizeAnchor = akBottom
         end
@@ -1697,17 +1696,17 @@ object fmMain: TfmMain
           Left = 1
           Height = 81
           Top = 109
-          Width = 965
+          Width = 667
           Align = alBottom
           BevelOuter = bvNone
           ClientHeight = 81
-          ClientWidth = 965
+          ClientWidth = 667
           TabOrder = 3
           object meActNotes: TMemo
             Left = 4
             Height = 37
             Top = 4
-            Width = 957
+            Width = 659
             Align = alClient
             BorderSpacing.Around = 4
             OnChange = meActNotesChange
@@ -1718,11 +1717,11 @@ object fmMain: TfmMain
             Left = 0
             Height = 36
             Top = 45
-            Width = 965
+            Width = 667
             Align = alBottom
             BevelOuter = bvNone
             ClientHeight = 36
-            ClientWidth = 965
+            ClientWidth = 667
             TabOrder = 1
             object lbCalAct: TLabel
               Left = 9
@@ -1736,7 +1735,7 @@ object fmMain: TfmMain
               Left = 189
               Height = 24
               Top = 4
-              Width = 131
+              Width = 139
               ArrowShape = asModernLarger
               CenturyFrom = 1941
               MaxDate = 2958465
@@ -1761,7 +1760,7 @@ object fmMain: TfmMain
               MonthNames = 'Long'
             end
             object lbActDates: TLabel
-              Left = 353
+              Left = 369
               Height = 18
               Top = 8
               Width = 72
@@ -1775,8 +1774,8 @@ object fmMain: TfmMain
         Cursor = crVSplit
         Left = 0
         Height = 5
-        Top = 185
-        Width = 967
+        Top = 170
+        Width = 669
         Align = alBottom
         ResizeAnchor = akBottom
         Visible = False
@@ -1784,17 +1783,17 @@ object fmMain: TfmMain
     end
     object pnSubNotesGrid: TPanel
       Left = 0
-      Height = 415
-      Top = 112
+      Height = 400
+      Top = 124
       Width = 170
       Align = alLeft
       BevelOuter = bvNone
-      ClientHeight = 415
+      ClientHeight = 400
       ClientWidth = 170
       TabOrder = 3
       object grTitles: TStringGrid
         Left = 0
-        Height = 369
+        Height = 354
         Top = 0
         Width = 170
         Align = alClient
@@ -1814,7 +1813,7 @@ object fmMain: TfmMain
       object pnBtnNotes: TPanel
         Left = 0
         Height = 40
-        Top = 369
+        Top = 354
         Width = 170
         Align = alBottom
         BorderSpacing.Bottom = 6
@@ -2000,8 +1999,8 @@ object fmMain: TfmMain
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 561
-    Width = 1317
+    Top = 558
+    Width = 1019
     Align = alBottom
     ResizeAnchor = akBottom
     Visible = False
@@ -2010,7 +2009,7 @@ object fmMain: TfmMain
     Left = 0
     Height = 34
     Top = 0
-    Width = 1317
+    Width = 1019
     AutoSize = True
     ButtonHeight = 32
     ButtonWidth = 32
@@ -2313,17 +2312,17 @@ object fmMain: TfmMain
   end
   object pnGridSubjects: TPanel
     Left = 0
-    Height = 527
+    Height = 524
     Top = 34
     Width = 170
     Align = alLeft
     BevelOuter = bvNone
-    ClientHeight = 527
+    ClientHeight = 524
     ClientWidth = 170
     TabOrder = 6
     object grSubjects: TDBGrid
       Left = 0
-      Height = 390
+      Height = 387
       Top = 0
       Width = 170
       Align = alClient
@@ -2350,7 +2349,7 @@ object fmMain: TfmMain
     object dbSubComm: TDBMemo
       Left = 6
       Height = 80
-      Top = 441
+      Top = 438
       Width = 158
       Align = alBottom
       BorderSpacing.Around = 6
@@ -2365,7 +2364,7 @@ object fmMain: TfmMain
       Cursor = crVSplit
       Left = 0
       Height = 5
-      Top = 430
+      Top = 427
       Width = 170
       Align = alBottom
       ResizeAnchor = akBottom
@@ -2373,7 +2372,7 @@ object fmMain: TfmMain
     object pnBtnSubjects: TPanel
       Left = 0
       Height = 40
-      Top = 390
+      Top = 387
       Width = 170
       Align = alBottom
       BevelOuter = bvNone
@@ -2945,8 +2944,9 @@ object fmMain: TfmMain
     AfterPost = sqSubjectsAfterPost
     BeforeDelete = sqSubjectsBeforeDelete
     AfterDelete = sqSubjectsAfterDelete
+    BeforeScroll = sqSubjectsBeforeScroll
     AfterScroll = sqSubjectsAfterScroll
-    left = 65
+    left = 64
     top = 96
   end
   object dsSubjects: TDataSource

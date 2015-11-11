@@ -472,6 +472,7 @@ type
     procedure sqSubjectsBeforePost(DataSet: TDataSet);
     procedure FindFirstNext(Sender: TObject);
     function IsDirectoryEmpty(const myDir: string): Boolean;
+    procedure sqSubjectsBeforeScroll(DataSet: TDataSet);
     procedure tbActClearAllClick(Sender: TObject);
     procedure tbActCopyAllClick(Sender: TObject);
     procedure tbActCopyGroupClick(Sender: TObject);
@@ -650,6 +651,8 @@ var
   OpenSaveDlgFilter: String;
   // RichMemo is modified by user
   IsMemoModified: Boolean = False;
+  // The file in use is modified
+  flFileChanged: Boolean = False;
   // Tags list must be recrated;
   RecreateTagsList: Boolean = False;
   // Saved value of tags (sqNotes does not support OldValue)
@@ -838,8 +841,14 @@ begin
         FmMaximized := False;
         fmMain.Top := MyIni.ReadInteger('mynotex', 'top', 0);
         fmMain.Left := MyIni.ReadInteger('mynotex', 'left', 0);
-        fmMain.Width := MyIni.ReadInteger('mynotex', 'width', 0);
-        fmMain.Height := MyIni.ReadInteger('mynotex', 'heigth', 0);
+        if MyIni.ReadInteger('mynotex', 'width', 0) > 100 then
+          fmMain.Width := MyIni.ReadInteger('mynotex', 'width', 0)
+        else
+          fmMain.Width := 800;
+        if MyIni.ReadInteger('mynotex', 'heigth', 0) > 100 then
+          fmMain.Height := MyIni.ReadInteger('mynotex', 'heigth', 0)
+        else
+          fmMain.Height := 600;
       end;
       DefFontName := MyIni.ReadString('mynotex', 'fontname', 'Sans');
       DefFontSize := MyIni.ReadInteger('mynotex', 'fontsize', 11);
@@ -1009,6 +1018,7 @@ begin
   FDate.LongDateFormat := 'dddd mmmm d yyyy';
   FDate.DateSeparator := '-';
   dbDate.DateDisplayOrder:= ddoMDY;
+  dtCalAct.DateDisplayOrder:= ddoMDY;
   DateOrder := 'MDY';
   DateMask := '  -  -    ';
   // Load and activate translation
@@ -1752,12 +1762,21 @@ begin
     if StartSel > - 1 then begin
       EndSel := dbText.SelStart;
       while ((UTF8Copy(dbText.Text, EndSel, 1) <> ' ') and
-      (UTF8Copy(dbText.Text, EndSel, 1) <> LineEnding) and
-      (UTF8Copy(dbText.Text, EndSel, 1) <> '.') and
-      (UTF8Copy(dbText.Text, EndSel, 1) <> ',') and
-      (UTF8Copy(dbText.Text, EndSel, 1) <> #9) and
-      (EndSel <= UTF8Length(dbText.Text))) do
-      EndSel := EndSel + 1;
+        (UTF8Copy(dbText.Text, EndSel, 1) <> LineEnding) and
+        (UTF8Copy(dbText.Text, EndSel, 1) <> #9) and
+        (EndSel <= UTF8Length(dbText.Text))) do
+        EndSel := EndSel + 1;
+      if ((UTF8Copy(dbText.Text, EndSel - 1, 1) = '.') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = ',') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = ';') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = ':') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = '?') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = '!')) then
+        EndSel := EndSel - 1;
+      if ((UTF8Copy(dbText.Text, EndSel - 1, 1) = ')') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = ']') or
+        (UTF8Copy(dbText.Text, EndSel - 1, 1) = '}')) then
+        EndSel := EndSel - 1;
       ThingToRun := UTF8Copy(dbText.Text, startSel + 1, EndSel - StartSel - 1);
       if UTF8Copy(ThingToRun, 1, 6) = 'mnt://' then
       begin
@@ -2175,12 +2194,14 @@ begin
     IsTextToLoad := True;
     // Now load the text
     sqNotesAfterScroll(nil);
+    // File changed
+    flFileChanged := True;
   end;
 end;
 
 procedure TfmMain.sqSubjectsAfterScroll(DataSet: TDataSet);
 begin
-  // Select the Notes corresponding to the subject; see Note 2 below the code
+  // Select the Notes corresponding to the subject
   with sqNotes do begin
     Close;
     if miOrderByTitle.Checked = True then begin
@@ -2310,6 +2331,15 @@ begin
   grSubjects.SetFocus;
 end;
 
+procedure TfmMain.sqSubjectsBeforeScroll(DataSet: TDataSet);
+begin
+  // Save data before scroll if richedit is modified
+  if IsMemoModified = True then
+  begin
+    sqNotes.Edit;
+    sqNotes.Post;
+  end;
+end;
 
 // ************************* NOTES PROCEDURES **********************************
 
@@ -2551,6 +2581,8 @@ begin
   LoadTitleDateGrid;
   // Save the current tags value
   OldTagsValue := sqNotes.FieldByName('NotesTags').AsString;
+  // File changed
+  flFileChanged := True;
 end;
 
 procedure TfmMain.sqNotesAfterDelete(DataSet: TDataSet);
@@ -2774,9 +2806,12 @@ begin
   // sqNotes is closed and reopened in the sqSubjects.AfterScroll event
   // if there are subjects; otherwise nothing happens
   sqSubjects.Locate('IDSubjects', IDSub, []);
+  sqNotes.Locate('IDNotes', IDNote, []);
   // Now load the text
   IsTextToLoad := True;
-  sqNotes.Locate('IDNotes', IDNote, []);
+  // The locate function do not activate sqNotesAfterScroll
+  // if the current record is the right one, so...
+  sqNotesAfterScroll(nil);
 end;
 
 procedure TfmMain.miFileCopyAsClick(Sender: TObject);
@@ -3882,6 +3917,8 @@ begin
   // Move Down note
   if sqNotes.RecNo < sqNotes.RecordCount then
   try
+    Screen.Cursor := crHourGlass;
+    Application.ProcessMessages;
     iIDNotes := sqNotes.FieldByName('IDNotes').AsInteger;
     sqMove := TSqlite3Dataset.Create(Self);
     sqMove.FileName := sqNotes.FileName;
@@ -3911,6 +3948,7 @@ begin
     sqNotesAfterScroll(nil);
   finally
     sqMove.Free;
+    Screen.Cursor := crDefault;
   end;
 end;
 
@@ -3921,6 +3959,8 @@ begin
   // Move up note
   if sqNotes.RecNo > 1 then
   try
+    Screen.Cursor := crHourGlass;
+    Application.ProcessMessages;
     iIDNotes := sqNotes.FieldByName('IDNotes').AsInteger;
     sqMove := TSqlite3Dataset.Create(Self);
     sqMove.FileName := sqNotes.FileName;
@@ -3950,6 +3990,7 @@ begin
     sqNotesAfterScroll(nil);
   finally
     sqMove.Free;
+    Screen.Cursor := crDefault;
   end;
 end;
 
@@ -3960,6 +4001,8 @@ begin
   // Move down subject
   if sqSubjects.RecNo < sqSubjects.RecordCount then
   try
+    Screen.Cursor := crHourGlass;
+    Application.ProcessMessages;
     iIDSub := sqSubjects.FieldByName('IDSubjects').AsInteger;
     sqMove := TSqlite3Dataset.Create(Self);
     sqMove.FileName := sqSubjects.FileName;
@@ -3989,6 +4032,7 @@ begin
     sqNotesAfterScroll(nil);
   finally
     sqMove.Free;
+    Screen.Cursor := crDefault;
   end;
 end;
 
@@ -3999,6 +4043,8 @@ begin
   // Move up subject
   if sqSubjects.RecNo > 1 then
   try
+    Screen.Cursor := crHourGlass;
+    Application.ProcessMessages;
     iIDSub := sqSubjects.FieldByName('IDSubjects').AsInteger;
     sqMove := TSqlite3Dataset.Create(Self);
     sqMove.FileName := sqSubjects.FileName;
@@ -4028,6 +4074,7 @@ begin
     sqNotesAfterScroll(nil);
   finally
     sqMove.Free;
+    Screen.Cursor := crDefault;
   end;
 end;
 
@@ -4291,6 +4338,7 @@ begin
   fmOptions.bnOptionsSyncDir.Caption := cpt052;
   fmOptions.lbOptionsFormColor.Caption := cpt047 + ' ' + ColorToString(Color);
   fmOptions.bnOptionsFormColor.Caption := cpt053;
+  fmOptions.bnOptionsFormClDef.Caption := cpt062;
   fmOptions.lbOptionsFormTrans.Caption := cpt055;
   fmOptions.cbOptionsActivateTray.Caption := cpt048;
   fmOptions.cbOptionsOpenLastFile.Caption := cpt049;
@@ -5390,11 +5438,9 @@ begin
     WriteLn(myFile, '   </HEAD>');
     WriteLn(myFile, '   <BODY>');
     SubNotesText := sqNotes.FieldByName('NotesTitle').AsString;
-    // Clear < and >, to prevent HTML breaking in title
-    while Pos('<', SubNotesText) > 0 do
-      SubNotesText[Pos('<', SubNotesText)] := '(';
-    while Pos('>', SubNotesText) > 0 do
-      SubNotesText[Pos('>', SubNotesText)] := ')';
+    SubNotesText := StringReplace(SubNotesText, '&', '&amp;', [rfReplaceAll]);
+    SubNotesText := StringReplace(SubNotesText, '<', '&lt;', [rfReplaceAll]);
+    SubNotesText := StringReplace(SubNotesText, '>', '&gt;', [rfReplaceAll]);
     WriteLn(myFile, '<H1>' + SubNotesText + '</H1>');
     // Add date if not for print
     if Sender <> miNotesPrint then begin
@@ -5503,6 +5549,8 @@ begin
         '<li>', [rfReplaceAll]);
     end;
     SubNotesText := StringReplace(SubNotesText, LineEnding, '<p>', [rfReplaceAll]);
+    SubNotesText := StringReplace(SubNotesText, #5, '&lt;', [rfReplaceAll]);
+    SubNotesText := StringReplace(SubNotesText, #6, '&gt;', [rfReplaceAll]);
     WriteLn(myFile, SubNotesText);
     // Save activities
     if sqNotes.FieldByName('NotesActivities').AsString <> '' then
@@ -5976,15 +6024,14 @@ begin
   Result := -1;
   SelStart := dbText.SelStart;
   while ((UTF8Copy(dbText.Text, SelStart, 1) <> ' ') and
+    (UTF8Copy(dbText.Text, SelStart, 1) <> #9) and
     (UTF8Copy(dbText.Text, SelStart, 1) <> LineEnding) and
-    (UTF8Copy(dbText.Text, SelStart, 1) <> '(') and
-    (UTF8Copy(dbText.Text, SelStart, 1) <> '{') and
-    (UTF8Copy(dbText.Text, SelStart, 1) <> '[') and
-    (UTF8Copy(dbText.Text, SelStart, 1) <> ')') and
-    (UTF8Copy(dbText.Text, SelStart, 1) <> '}') and
-    (UTF8Copy(dbText.Text, SelStart, 1) <> ']') and
     (SelStart > 0)) do
     SelStart := SelStart - 1;
+  if ((UTF8Copy(dbText.Text, SelStart + 1, 1) = '(') or
+    (UTF8Copy(dbText.Text, SelStart + 1, 1) = '{') or
+    (UTF8Copy(dbText.Text, SelStart + 1, 1) = '[')) then
+    SelStart := SelStart + 1;
   if (((UTF8LowerCase(UTF8Copy(dbText.Text, SelStart + 1, 7)) = 'http://') and
     (UTF8Copy(dbText.Text, SelStart + 8, 1) <> LineEnding) and
     (UTF8Length(dbText.Text) > SelStart + 7)) or
@@ -6011,8 +6058,20 @@ procedure TfmMain.MakeLink(SelStart: Integer);
   fp: TFontParams;
 begin
   // Make current word a link
-  if SelStart > - 1 then begin
+  if SelStart > - 1 then
+  begin
     SelEnd := dbText.SelStart - 1;
+    if ((UTF8Copy(dbText.Text, SelEnd + 1, 1) = '.') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = ',') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = ';') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = ':') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = '?') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = '!')) then
+      SelEnd := SelEnd - 1;
+    if ((UTF8Copy(dbText.Text, SelEnd + 1, 1) = ')') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = ']') or
+      (UTF8Copy(dbText.Text, SelEnd + 1, 1) = '}')) then
+      SelEnd := SelEnd - 1;
     dbText.GetTextAttributes(SelStart, fp);
     fp.Color := clBlue;
     fp.Style := [fsUnderline];
@@ -6713,12 +6772,17 @@ begin
   // Autosync
   if flAutosync = True then begin
     if miToolsSyncDo.Enabled = True then
+    begin
       miToolsSyncDoClick(nil);
+      flFileChanged := False;
+    end;
   end;
   // Set default font
   dbText.SetDefaultFont(DefFontName, DefFontSize + ZoomFontSize);
   // To activate menu items and buttons
   dsNotesDataChange(nil, nil);
+  // File not changed
+  flFileChanged := False;
 end;
 
 procedure TfmMain.CloseDataTables;
@@ -6744,9 +6808,15 @@ begin
     sqSetId.ApplyUpdates;
     sqSetId.Close;
     // Autosync
-    if flAutosync = True then begin
+    if flAutosync = True then
+    begin
       if miToolsSyncDo.Enabled = True then
-        miToolsSyncDoClick(nil);
+      begin
+        if flFileChanged = True then
+        begin
+          miToolsSyncDoClick(nil);
+        end;
+      end;
     end;
   finally
     sqSetId.Free;
@@ -7364,17 +7434,18 @@ begin
   // Create tags list
   Screen.Cursor := crHourGlass;
   Application.ProcessMessages;
-  lbTagsNames.Clear;
   sqTags := TSqlite3Dataset.Create(Self);
   sqTags.FileName := sqNotes.FileName;
   sqTags.PrimaryKey := sqNotes.PrimaryKey;
   sqTags.SQL := 'Select IDNotes, NotesTags from Notes where NotesTags not null';
   sqTags.Open;
-  if sqTags.RecordCount > 1000 then begin
+  if sqTags.RecordCount > 1000 then
+  try
     lbTagsNames.Items.Add(msg038);
+    Exit;
+  finally
     sqTags.Free;
     Screen.Cursor := crDefault;
-    Exit;
   end;
   try
     TagsList := TStringList.Create;
@@ -7396,10 +7467,20 @@ begin
       end;
       sqTags.Next;
     end;
-    lbTagsNames.Sorted := False;
     for i := 0 to TagsList.Count - 1 do
-      lbTagsNames.Items.Add(TagsList[i] + ' [' + TagsFreq[i] + ']');
-    lbTagsNames.Sorted := True;
+      TagsList[i] := TagsList[i] + ' [' + TagsFreq[i] + ']';
+    TagsList.Sort;
+    lbTagsNames.Clear;
+    for i := 0 to TagsList.Count - 1 do
+    begin
+      if UTF8Pos('@', TagsList[i]) > 0 then
+        lbTagsNames.Items.Add(TagsList[i]);
+    end;
+    for i := 0 to TagsList.Count - 1 do
+    begin
+      if UTF8Pos('@', TagsList[i]) = 0 then
+        lbTagsNames.Items.Add(TagsList[i]);
+    end;
   finally
     TagsList.Free;
     TagsFreq.Free;
@@ -10268,6 +10349,7 @@ begin
         FDate.ShortDateFormat := 'dd-mm-yyyy';
         FDate.LongDateFormat := 'dddd d mmmm yyyy';
         dbDate.DateDisplayOrder:= ddoDMY;
+        dtCalAct.DateDisplayOrder:= ddoDMY;
         DateOrder := 'DMY';
         DateMask := '  -  -    ';
       end
@@ -10275,6 +10357,7 @@ begin
         FDate.ShortDateFormat := 'yyyy-mm-dd';
         FDate.LongDateFormat := 'dddd mmmm d yyyy';
         dbDate.DateDisplayOrder:= ddoYMD;
+        dtCalAct.DateDisplayOrder:= ddoYMD;
         DateOrder := 'YMD';
         DateMask := '    -  -  ';
       end
@@ -10282,6 +10365,7 @@ begin
         FDate.ShortDateFormat := 'mm-dd-yyyy';
         FDate.LongDateFormat := 'dddd mmmm d yyyy';
         dbDate.DateDisplayOrder:= ddoMDY;
+        dtCalAct.DateDisplayOrder:= ddoMDY;
         DateOrder := 'MDY';
         DateMask := '  -  -    ';
       end;

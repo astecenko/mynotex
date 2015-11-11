@@ -196,7 +196,7 @@ LazarusResources.Add('TfmMoveNote','FORMDATA',[
   ,#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#10
   +'KeyPreview'#9#7'OnClose'#7#9'FormClose'#8'OnCreate'#7#10'FormCreate'#10'OnK'
   +'eyPress'#7#12'FormKeyPress'#8'Position'#7#14'poScreenCenter'#13'ShowInTaskB'
-  +'ar'#7#7'stNever'#10'LCLVersion'#6#7'1.2.6.0'#0#6'TLabel'#13'lbMoveNoteSub'#4
+  +'ar'#7#7'stNever'#10'LCLVersion'#6#7'1.4.4.0'#0#6'TLabel'#13'lbMoveNoteSub'#4
   +'Left'#2#24#6'Height'#2#18#3'Top'#2#16#5'Width'#3'W'#1#7'Caption'#6'.Link th'
   +'e current note to the selected subject.'#11'ParentColor'#8#0#0#7'TButton'#10
   +'bnMoveNote'#4'Left'#3#222#0#6'Height'#2#31#3'Top'#3'a'#1#5'Width'#3#135#0#7
