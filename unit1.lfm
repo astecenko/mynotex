@@ -7,7 +7,7 @@ object fmMain: TfmMain
   AllowDropFiles = True
   AlphaBlend = True
   Caption = 'MyNotex'
-  ClientHeight = 683
+  ClientHeight = 687
   ClientWidth = 1019
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -159,7 +159,7 @@ object fmMain: TfmMain
   LCLVersion = '1.4.4.0'
   object imBackground: TImage
     Left = 175
-    Height = 524
+    Height = 525
     Top = 34
     Width = 844
     Align = alClient
@@ -954,8 +954,8 @@ object fmMain: TfmMain
   end
   object sbStatusBar: TStatusBar
     Left = 0
-    Height = 20
-    Top = 663
+    Height = 23
+    Top = 664
     Width = 1019
     Panels = <    
       item
@@ -971,7 +971,7 @@ object fmMain: TfmMain
   object pnFind: TPanel
     Left = 0
     Height = 100
-    Top = 563
+    Top = 564
     Width = 1019
     Align = alBottom
     BevelOuter = bvNone
@@ -1013,10 +1013,10 @@ object fmMain: TfmMain
       end
       object cbFindKind: TComboBox
         Left = 8
-        Height = 26
+        Height = 23
         Top = 5
         Width = 288
-        ItemHeight = 0
+        ItemHeight = 15
         ItemIndex = 0
         Items.Strings = (
           'Subject title begins with'
@@ -1106,18 +1106,18 @@ object fmMain: TfmMain
   end
   object spSplitterSubjects: TSplitter
     Left = 170
-    Height = 524
+    Height = 525
     Top = 34
     Width = 5
   end
   object pnNotes: TPanel
     Left = 175
-    Height = 524
+    Height = 525
     Top = 34
     Width = 844
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 524
+    ClientHeight = 525
     ClientWidth = 844
     TabOrder = 1
     object pnNotesTop: TPanel
@@ -1268,29 +1268,28 @@ object fmMain: TfmMain
         Sorted = True
         TabOrder = 3
         TabStop = False
-        TopIndex = -1
       end
     end
     object spSplitterNotes: TSplitter
       Left = 170
-      Height = 400
+      Height = 401
       Top = 124
       Width = 5
     end
     object pnTextTags: TPanel
       Left = 175
-      Height = 400
+      Height = 401
       Top = 124
       Width = 669
       Align = alClient
       BevelOuter = bvNone
-      ClientHeight = 400
+      ClientHeight = 401
       ClientWidth = 669
       TabOrder = 1
       object pnFindText: TPanel
         Left = 0
         Height = 34
-        Top = 175
+        Top = 176
         Width = 669
         Align = alBottom
         BevelOuter = bvNone
@@ -1331,7 +1330,7 @@ object fmMain: TfmMain
       end
       object pnAttachments: TPanel
         Left = 460
-        Height = 164
+        Height = 165
         Top = 0
         Width = 203
         Align = alRight
@@ -1339,7 +1338,7 @@ object fmMain: TfmMain
         BorderSpacing.Right = 6
         BorderSpacing.Bottom = 6
         BevelOuter = bvNone
-        ClientHeight = 164
+        ClientHeight = 165
         ClientWidth = 203
         TabOrder = 2
         object lbListTags: TLabel
@@ -1354,7 +1353,7 @@ object fmMain: TfmMain
         end
         object lbTagsNames: TListBox
           Left = 0
-          Height = 144
+          Height = 145
           Top = 20
           Width = 203
           Align = alClient
@@ -1364,12 +1363,11 @@ object fmMain: TfmMain
           ParentColor = True
           ScrollWidth = 201
           TabOrder = 0
-          TopIndex = -1
         end
       end
       object spSplitterAtt: TSplitter
         Left = 449
-        Height = 170
+        Height = 171
         Top = 0
         Width = 5
         Align = alRight
@@ -1377,19 +1375,19 @@ object fmMain: TfmMain
       end
       object pnText: TPanel
         Left = 0
-        Height = 170
+        Height = 171
         Top = 0
         Width = 449
         Align = alClient
         BevelOuter = bvNone
-        ClientHeight = 170
+        ClientHeight = 171
         ClientWidth = 449
         ParentColor = False
         TabOrder = 0
         object dbText: TRichMemo
           Cursor = crIBeam
           Left = 6
-          Height = 164
+          Height = 165
           Top = 0
           Width = 437
           Align = alClient
@@ -1422,17 +1420,17 @@ object fmMain: TfmMain
           BevelOuter = bvNone
           BorderWidth = 1
           BorderStyle = bsSingle
-          ClientHeight = 158
-          ClientWidth = 248
+          ClientHeight = 156
+          ClientWidth = 246
           Color = clWindow
           ParentColor = False
           TabOrder = 1
           Visible = False
           object lbPwdTop: TLabel
             Left = 0
-            Height = 18
+            Height = 15
             Top = 7
-            Width = 250
+            Width = 248
             Alignment = taCenter
             Anchors = [akTop, akLeft, akRight]
             Caption = 'Insert password to show the text'
@@ -1442,9 +1440,9 @@ object fmMain: TfmMain
           end
           object lbPwdBottom: TLabel
             Left = 0
-            Height = 18
+            Height = 15
             Top = 71
-            Width = 250
+            Width = 248
             Alignment = taCenter
             Anchors = [akTop, akLeft, akRight]
             Caption = 'The password is not correct'
@@ -1456,9 +1454,9 @@ object fmMain: TfmMain
           end
           object edPassword: TEdit
             Left = 20
-            Height = 30
+            Height = 23
             Top = 35
-            Width = 208
+            Width = 206
             Anchors = [akTop, akLeft, akRight]
             EchoMode = emPassword
             OnKeyPress = edPasswordKeyPress
@@ -1486,7 +1484,7 @@ object fmMain: TfmMain
       object pnActivities: TPanel
         Left = 0
         Height = 191
-        Top = 209
+        Top = 210
         Width = 669
         Align = alBottom
         ClientHeight = 191
@@ -1725,9 +1723,9 @@ object fmMain: TfmMain
             TabOrder = 1
             object lbCalAct: TLabel
               Left = 9
-              Height = 18
+              Height = 15
               Top = 8
-              Width = 139
+              Width = 93
               Caption = 'Default start date:'
               ParentColor = False
             end
@@ -1761,9 +1759,9 @@ object fmMain: TfmMain
             end
             object lbActDates: TLabel
               Left = 369
-              Height = 18
+              Height = 15
               Top = 8
-              Width = 72
+              Width = 50
               Caption = 'No dates.'
               ParentColor = False
             end
@@ -1774,7 +1772,7 @@ object fmMain: TfmMain
         Cursor = crVSplit
         Left = 0
         Height = 5
-        Top = 170
+        Top = 171
         Width = 669
         Align = alBottom
         ResizeAnchor = akBottom
@@ -1783,17 +1781,17 @@ object fmMain: TfmMain
     end
     object pnSubNotesGrid: TPanel
       Left = 0
-      Height = 400
+      Height = 401
       Top = 124
       Width = 170
       Align = alLeft
       BevelOuter = bvNone
-      ClientHeight = 400
+      ClientHeight = 401
       ClientWidth = 170
       TabOrder = 3
       object grTitles: TStringGrid
         Left = 0
-        Height = 354
+        Height = 355
         Top = 0
         Width = 170
         Align = alClient
@@ -1808,19 +1806,20 @@ object fmMain: TfmMain
         OnDblClick = grTitlesDblClick
         OnDrawCell = grTitlesDrawCell
         OnKeyDown = grTitlesKeyDown
+        OnSelection = grTitlesSelection
         OnSelectCell = grTitlesSelectCell
       end
       object pnBtnNotes: TPanel
         Left = 0
         Height = 40
-        Top = 354
+        Top = 355
         Width = 170
         Align = alBottom
         BorderSpacing.Bottom = 6
         BevelOuter = bvNone
         BorderStyle = bsSingle
-        ClientHeight = 38
-        ClientWidth = 168
+        ClientHeight = 36
+        ClientWidth = 166
         TabOrder = 1
         object bnNotesUp: TBitBtn
           Left = 6
@@ -1999,7 +1998,7 @@ object fmMain: TfmMain
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 558
+    Top = 559
     Width = 1019
     Align = alBottom
     ResizeAnchor = akBottom
@@ -2312,17 +2311,17 @@ object fmMain: TfmMain
   end
   object pnGridSubjects: TPanel
     Left = 0
-    Height = 524
+    Height = 525
     Top = 34
     Width = 170
     Align = alLeft
     BevelOuter = bvNone
-    ClientHeight = 524
+    ClientHeight = 525
     ClientWidth = 170
     TabOrder = 6
     object grSubjects: TDBGrid
       Left = 0
-      Height = 387
+      Height = 388
       Top = 0
       Width = 170
       Align = alClient
@@ -2349,7 +2348,7 @@ object fmMain: TfmMain
     object dbSubComm: TDBMemo
       Left = 6
       Height = 80
-      Top = 438
+      Top = 439
       Width = 158
       Align = alBottom
       BorderSpacing.Around = 6
@@ -2364,7 +2363,7 @@ object fmMain: TfmMain
       Cursor = crVSplit
       Left = 0
       Height = 5
-      Top = 427
+      Top = 428
       Width = 170
       Align = alBottom
       ResizeAnchor = akBottom
@@ -2372,13 +2371,13 @@ object fmMain: TfmMain
     object pnBtnSubjects: TPanel
       Left = 0
       Height = 40
-      Top = 387
+      Top = 388
       Width = 170
       Align = alBottom
       BevelOuter = bvNone
       BorderStyle = bsSingle
-      ClientHeight = 38
-      ClientWidth = 168
+      ClientHeight = 36
+      ClientWidth = 166
       TabOrder = 3
       object bnSubUp: TBitBtn
         Left = 8

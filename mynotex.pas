@@ -40,7 +40,7 @@ uses
   Unit6, Unit7, Unit8, Unit9
   { you can add units after this };
 
-{$IFDEF WINDOWS}{$R mynotex.rc}{$ENDIF}
+//{$IFDEF WINDOWS}{$R mynotex.rc}{$ENDIF}
 
 {$R *.res}
 

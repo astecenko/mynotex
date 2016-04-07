@@ -3,7 +3,7 @@
 LazarusResources.Add('TfmMain','FORMDATA',[
   'TPF0'#7'TfmMain'#6'fmMain'#4'Left'#3#216#1#6'Height'#3#195#2#3'Top'#3#197#0#5
   +'Width'#3#251#3#13'ActiveControl'#7#14'pnGridSubjects'#14'AllowDropFiles'#9
-  +#10'AlphaBlend'#9#7'Caption'#6#7'MyNotex'#12'ClientHeight'#3#171#2#11'Client'
+  +#10'AlphaBlend'#9#7'Caption'#6#7'MyNotex'#12'ClientHeight'#3#175#2#11'Client'
   +'Width'#3#251#3#9'Icon.Data'#10#194#16#0#0#190#16#0#0#0#0#1#0#1#0'  '#0#0#1#0
   +' '#0#168#16#0#0#22#0#0#0'('#0#0#0' '#0#0#0'@'#0#0#0#1#0' '#0#0#0#0#0#0#16#0
   +#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
@@ -198,7 +198,7 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +'mDropFiles'#9'OnKeyDown'#7#11'FormKeyDown'#8'OnResize'#7#10'FormResize'#6'O'
   +'nShow'#7#8'FormShow'#19'OnWindowStateChange'#7#21'FormWindowStateChange'#10
   +'LCLVersion'#6#7'1.4.4.0'#0#6'TImage'#12'imBackground'#4'Left'#3#175#0#6'Hei'
-  +'ght'#3#12#2#3'Top'#2'"'#5'Width'#3'L'#3#5'Align'#7#8'alClient'#6'Center'#9
+  +'ght'#3#13#2#3'Top'#2'"'#5'Width'#3'L'#3#5'Align'#7#8'alClient'#6'Center'#9
   +#12'Picture.Data'#10#0'b'#0#0#23'TPortableNetworkGraphic'#228'a'#0#0#137'PNG'
   +#13#10#26#10#0#0#0#13'IHDR'#0#0#1#0#0#0#1#0#8#6#0#0#0'\r'#168'f'#0#0#10'EiCC'
   +'PICC profile'#0#0'x'#218#157'SgTS'#233#22'='#247#222#244'BK'#136#128#148'Ko'
@@ -1254,10 +1254,10 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +#145'"E'#138#20')R'#164'H'#145'"E'#138#20')R'#164'H'#145'"E'#138#20')R'#164
   +'H'#145'r4'#228#255#7#163#142'U'#26#11#244'.'#185#0#0#0#0'IEND'#174'B`'#130
   +#11'Transparent'#9#0#0#10'TStatusBar'#11'sbStatusBar'#4'Left'#2#0#6'Height'#2
-  +#20#3'Top'#3#151#2#5'Width'#3#251#3#6'Panels'#14#1#5'Width'#3#144#1#0#1#9'Al'
+  +#23#3'Top'#3#152#2#5'Width'#3#251#3#6'Panels'#14#1#5'Width'#3#144#1#0#1#9'Al'
   +'ignment'#7#14'taRightJustify'#5'Width'#2'2'#0#0#10'SimpleText'#6#15'No file'
   +' opened.'#11'SimplePanel'#8#0#0#6'TPanel'#6'pnFind'#4'Left'#2#0#6'Height'#2
-  +'d'#3'Top'#3'3'#2#5'Width'#3#251#3#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6
+  +'d'#3'Top'#3'4'#2#5'Width'#3#251#3#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6
   +'bvNone'#12'ClientHeight'#2'd'#11'ClientWidth'#3#251#3#21'Constraints.MinHei'
   +'ght'#2'd'#8'TabOrder'#2#2#7'TabStop'#9#7'Visible'#8#0#6'TBevel'#11'bvBevelF'
   +'ind'#4'Left'#3'1'#1#6'Height'#2'^'#3'Top'#2#4#5'Width'#3#200#2#5'Align'#7#8
@@ -1267,13 +1267,13 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +'e'#12'ClientHeight'#2'd'#11'ClientWidth'#3'/'#1#8'TabOrder'#2#0#0#6'TLabel'
   +#7'lbFound'#4'Left'#2#8#6'Height'#2#18#3'Top'#2'L'#5'Width'#3' '#1#8'AutoSiz'
   +'e'#8#7'Caption'#6#18'Search not active.'#11'ParentColor'#8#0#0#9'TComboBox'
-  +#10'cbFindKind'#4'Left'#2#8#6'Height'#2#26#3'Top'#2#5#5'Width'#3' '#1#10'Ite'
-  +'mHeight'#2#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6#25'Subject title begins'
-  +' with'#6#22'Subject title contains'#6#22'Note title begins with'#6#19'Note '
-  +'title contains'#6#18'Note text contains'#6'#Tags are equal to (comma separa'
-  +'ted)'#6#16'Date is equal to'#6'!Date is between (comma separated)'#6#24'Att'
-  +'achment name contains'#0#5'Style'#7#14'csDropDownList'#8'TabOrder'#2#0#4'Te'
-  +'xt'#6#25'Subject title begins with'#0#0#5'TEdit'#10'edFindText'#4'Left'#2#8
+  +#10'cbFindKind'#4'Left'#2#8#6'Height'#2#23#3'Top'#2#5#5'Width'#3' '#1#10'Ite'
+  +'mHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'#1#6#25'Subject title begin'
+  +'s with'#6#22'Subject title contains'#6#22'Note title begins with'#6#19'Note'
+  +' title contains'#6#18'Note text contains'#6'#Tags are equal to (comma separ'
+  +'ated)'#6#16'Date is equal to'#6'!Date is between (comma separated)'#6#24'At'
+  +'tachment name contains'#0#5'Style'#7#14'csDropDownList'#8'TabOrder'#2#0#4'T'
+  +'ext'#6#25'Subject title begins with'#0#0#5'TEdit'#10'edFindText'#4'Left'#2#8
   +#6'Height'#2#27#3'Top'#2'*'#5'Width'#3#248#0#8'AutoSize'#8#10'OnKeyPress'#7
   +#18'edFindTextKeyPress'#8'TabOrder'#2#1#0#0#7'TBitBtn'#6'bnFind'#4'Left'#3#8
   +#1#6'Height'#2' '#3'Top'#2'%'#5'Width'#2' '#7'Anchors'#11#5'akTop'#7'akRight'
@@ -1328,9 +1328,9 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +'dgColLines'#10'dgRowLines'#6'dgTabs'#11'dgRowSelect'#21'dgAlwaysShowSelecti'
   +'on'#15'dgConfirmDelete'#14'dgCancelOnExit'#0#11'ParentColor'#9#8'ReadOnly'#9
   +#10'Scrollbars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#0#0#0#9'TSplitter'#18'spSpl'
-  +'itterSubjects'#4'Left'#3#170#0#6'Height'#3#12#2#3'Top'#2'"'#5'Width'#2#5#0#0
-  +#6'TPanel'#7'pnNotes'#4'Left'#3#175#0#6'Height'#3#12#2#3'Top'#2'"'#5'Width'#3
-  +'L'#3#5'Align'#7#8'alClient'#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#12
+  +'itterSubjects'#4'Left'#3#170#0#6'Height'#3#13#2#3'Top'#2'"'#5'Width'#2#5#0#0
+  +#6'TPanel'#7'pnNotes'#4'Left'#3#175#0#6'Height'#3#13#2#3'Top'#2'"'#5'Width'#3
+  +'L'#3#5'Align'#7#8'alClient'#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#13
   +#2#11'ClientWidth'#3'L'#3#8'TabOrder'#2#1#0#6'TPanel'#10'pnNotesTop'#4'Left'
   +#2#0#6'Height'#2'|'#3'Top'#2#0#5'Width'#3'L'#3#5'Align'#7#5'alTop'#10'BevelO'
   +'uter'#7#6'bvNone'#12'ClientHeight'#2'|'#11'ClientWidth'#3'L'#3#8'TabOrder'#2
@@ -1375,162 +1375,162 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +'dSelect'#8#10'ItemHeight'#2#0#10'OnDblClick'#7#18'lbAttNamesDblClick'#6'OnE'
   +'xit'#7#14'lbAttNamesExit'#14'ParentShowHint'#8#9'PopupMenu'#7#13'pmAttachme'
   +'nts'#11'ScrollWidth'#3#202#0#8'ShowHint'#9#6'Sorted'#9#8'TabOrder'#2#3#7'Ta'
-  +'bStop'#8#8'TopIndex'#2#255#0#0#0#9'TSplitter'#15'spSplitterNotes'#4'Left'#3
-  +#170#0#6'Height'#3#144#1#3'Top'#2'|'#5'Width'#2#5#0#0#6'TPanel'#10'pnTextTag'
-  +'s'#4'Left'#3#175#0#6'Height'#3#144#1#3'Top'#2'|'#5'Width'#3#157#2#5'Align'#7
-  +#8'alClient'#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#144#1#11'ClientWi'
-  +'dth'#3#157#2#8'TabOrder'#2#1#0#6'TPanel'#10'pnFindText'#4'Left'#2#0#6'Heigh'
-  +'t'#2'"'#3'Top'#3#175#0#5'Width'#3#157#2#5'Align'#7#8'alBottom'#10'BevelOute'
-  +'r'#7#6'bvNone'#12'ClientHeight'#2'"'#11'ClientWidth'#3#157#2#8'TabOrder'#2#1
-  +#7'Visible'#8#0#7'TButton'#11'bnFindFirst'#4'Left'#3')'#1#6'Height'#2#27#3'T'
-  +'op'#2#3#5'Width'#3#180#0#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#10
-  +'Find first'#7'OnClick'#7#13'FindFirstNext'#8'TabOrder'#2#1#0#0#7'TButton'#10
-  +'bnFindNext'#4'Left'#3#227#1#6'Height'#2#27#3'Top'#2#3#5'Width'#3#180#0#7'An'
-  +'chors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#9'Find next'#7'OnClick'#7#13'F'
-  +'indFirstNext'#8'TabOrder'#2#2#0#0#5'TEdit'#12'edLocateText'#4'Left'#2#5#6'H'
-  +'eight'#2#27#3'Top'#2#3#5'Width'#3#20#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'a'
-  +'kRight'#0#8'AutoSize'#8#10'OnKeyPress'#7#20'edLocateTextKeyPress'#8'TabOrde'
-  +'r'#2#0#0#0#0#6'TPanel'#13'pnAttachments'#4'Left'#3#204#1#6'Height'#3#164#0#3
-  +'Top'#2#0#5'Width'#3#203#0#5'Align'#7#7'alRight'#18'BorderSpacing.Left'#2#6
-  +#19'BorderSpacing.Right'#2#6#20'BorderSpacing.Bottom'#2#6#10'BevelOuter'#7#6
-  +'bvNone'#12'ClientHeight'#3#164#0#11'ClientWidth'#3#203#0#8'TabOrder'#2#2#0#6
-  +'TLabel'#10'lbListTags'#4'Left'#2#0#6'Height'#2#20#3'Top'#2#0#5'Width'#3#203
-  +#0#5'Align'#7#5'alTop'#8'AutoSize'#8#7'Caption'#6#4'Tags'#11'ParentColor'#8#0
-  +#0#8'TListBox'#11'lbTagsNames'#4'Left'#2#0#6'Height'#3#144#0#3'Top'#2#20#5'W'
-  +'idth'#3#203#0#5'Align'#7#8'alClient'#10'ItemHeight'#2#0#10'OnDblClick'#7#19
-  +'lbTagsNamesDblClick'#6'OnExit'#7#15'lbTagsNamesExit'#11'ParentColor'#9#11'S'
-  +'crollWidth'#3#201#0#8'TabOrder'#2#0#8'TopIndex'#2#255#0#0#0#9'TSplitter'#13
-  +'spSplitterAtt'#4'Left'#3#193#1#6'Height'#3#170#0#3'Top'#2#0#5'Width'#2#5#5
-  +'Align'#7#7'alRight'#12'ResizeAnchor'#7#7'akRight'#0#0#6'TPanel'#6'pnText'#4
-  +'Left'#2#0#6'Height'#3#170#0#3'Top'#2#0#5'Width'#3#193#1#5'Align'#7#8'alClie'
-  +'nt'#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#170#0#11'ClientWidth'#3
-  +#193#1#11'ParentColor'#8#8'TabOrder'#2#0#0#9'TRichMemo'#6'dbText'#6'Cursor'#7
-  +#7'crIBeam'#4'Left'#2#6#6'Height'#3#164#0#3'Top'#2#0#5'Width'#3#181#1#5'Alig'
-  +'n'#7#8'alClient'#18'BorderSpacing.Left'#2#6#19'BorderSpacing.Right'#2#6#20
-  +'BorderSpacing.Bottom'#2#6#25'BorderSpacing.InnerBorder'#2#20#5'Color'#7#7'c'
-  +'lWhite'#10'Font.Color'#7#7'clBlack'#13'HideSelection'#8#7'OnClick'#7#11'dbT'
-  ,'extClick'#9'OnKeyDown'#7#13'dbTextKeyDown'#7'OnKeyUp'#7#11'dbTextKeyUp'#9'O'
-  +'nMouseUp'#7#13'dbTextMouseUp'#12'OnMouseWheel'#7#16'dbTextMouseWheel'#10'Pa'
-  +'rentFont'#8#9'PopupMenu'#7#6'pmText'#10'ScrollBars'#7#10'ssVertical'#8'TabO'
-  +'rder'#2#0#8'WantTabs'#9#0#0#6'TPanel'#10'pnPassword'#4'Left'#2#12#6'Height'
-  +#3#160#0#3'Top'#2'X'#5'Width'#3#250#0#18'BorderSpacing.Left'#2#6#19'BorderSp'
-  +'acing.Right'#2#6#20'BorderSpacing.Bottom'#2#6#10'BevelOuter'#7#6'bvNone'#11
-  +'BorderWidth'#2#1#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#3#158#0#11
-  +'ClientWidth'#3#248#0#5'Color'#7#8'clWindow'#11'ParentColor'#8#8'TabOrder'#2
-  +#1#7'Visible'#8#0#6'TLabel'#8'lbPwdTop'#4'Left'#2#0#6'Height'#2#18#3'Top'#2#7
-  +#5'Width'#3#250#0#9'Alignment'#7#8'taCenter'#7'Anchors'#11#5'akTop'#6'akLeft'
-  +#7'akRight'#0#7'Caption'#6' Insert password to show the text'#11'ParentColor'
-  +#8#8'WordWrap'#9#8'OnResize'#7#14'lbPwdTopResize'#0#0#6'TLabel'#11'lbPwdBott'
-  +'om'#4'Left'#2#0#6'Height'#2#18#3'Top'#2'G'#5'Width'#3#250#0#9'Alignment'#7#8
-  +'taCenter'#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#7'Caption'#6#27'The'
-  +' password is not correct'#10'Font.Color'#4#213#30#30#0#11'ParentColor'#8#10
-  +'ParentFont'#8#7'Visible'#8#8'WordWrap'#9#0#0#5'TEdit'#10'edPassword'#4'Left'
-  +#2#20#6'Height'#2#30#3'Top'#2'#'#5'Width'#3#208#0#7'Anchors'#11#5'akTop'#6'a'
-  +'kLeft'#7'akRight'#0#8'EchoMode'#7#10'emPassword'#10'OnKeyPress'#7#18'edPass'
-  +'wordKeyPress'#12'PasswordChar'#6#1'*'#8'TabOrder'#2#0#0#0#0#12'TIpHtmlPanel'
-  +#7'ipPrint'#4'Left'#3'2'#2#6'Height'#2'2'#3'Top'#2'@'#5'Width'#3#170#0#13'Fi'
-  +'xedTypeface'#6#11'Courier New'#15'DefaultTypeFace'#6#7'default'#15'DefaultF'
-  +'ontSize'#2#12#10'FlagErrors'#8#24'PrintSettings.MarginLeft'#5#0#0#0#0#0#0#0
-  +#128#254'?'#23'PrintSettings.MarginTop'#5#0#0#0#0#0#0#0#128#254'?'#25'PrintS'
-  +'ettings.MarginRight'#5#0#0#0#0#0#0#0#128#254'?'#26'PrintSettings.MarginBott'
-  +'om'#5#0#0#0#0#0#0#0#128#254'?'#8'TabOrder'#2#2#7'Visible'#8#0#0#0#6'TPanel'
-  +#12'pnActivities'#4'Left'#2#0#6'Height'#3#191#0#3'Top'#3#209#0#5'Width'#3#157
-  +#2#5'Align'#7#8'alBottom'#12'ClientHeight'#3#191#0#11'ClientWidth'#3#157#2#8
-  +'TabOrder'#2#4#7'Visible'#8#0#11'TStringGrid'#9'grActGrid'#4'Left'#2#1#6'Hei'
-  +'ght'#2'E'#3'Top'#2'#'#5'Width'#3#155#2#5'Align'#7#8'alClient'#14'ExtendedSe'
-  +'lect'#8#4'Flat'#9#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#10
-  +'goVertLine'#10'goHorzLine'#11'goColSizing'#9'goEditing'#18'goDblClickAutoSi'
-  +'ze'#14'goSmoothScroll'#0#8'TabOrder'#2#1#10'OnDrawCell'#7#17'grActGridDrawC'
-  +'ell'#13'OnEditingDone'#7#20'grActGridEditingDone'#13'OnGetEditMask'#7#20'gr'
-  +'ActGridGetEditMask'#9'OnKeyDown'#7#16'grActGridKeyDown'#7'OnKeyUp'#7#14'grA'
-  +'ctGridKeyUp'#11'OnMouseDown'#7#18'grActGridMouseDown'#15'OnPrepareCanvas'#7
-  +#22'grActGridPrepareCanvas'#11'OnSelection'#7#18'grActGridSelection'#12'OnSe'
-  +'lectCell'#7#19'grActGridSelectCell'#13'OnSetEditText'#7#20'grActGridSetEdit'
-  +'Text'#0#0#8'TToolBar'#8'tbActBar'#4'Left'#2#1#6'Height'#2'"'#3'Top'#2#1#5'W'
-  +'idth'#3#155#2#8'AutoSize'#9#12'ButtonHeight'#2' '#11'ButtonWidth'#2' '#6'Im'
-  +'ages'#7#17'ilImageBarActGrid'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'
-  +#2#0#11'Transparent'#9#0#11'TToolButton'#12'tbActIndLeft'#4'Left'#2#1#4'Hint'
-  +#6#11'Indent left'#3'Top'#2#2#8'AutoSize'#9#10'ImageIndex'#2#0#7'OnClick'#7
-  +#17'tbActIndLeftClick'#0#0#11'TToolButton'#13'tbActIndRight'#4'Left'#2'!'#4
-  +'Hint'#6#12'Indent right'#3'Top'#2#2#8'AutoSize'#9#10'ImageIndex'#2#1#7'OnCl'
-  +'ick'#7#18'tbActIndRightClick'#0#0#11'TToolButton'#11'tbActMoveUp'#4'Left'#2
-  +'F'#4'Hint'#6#7'Move up'#3'Top'#2#2#10'ImageIndex'#2#2#7'OnClick'#7#16'tbAct'
-  +'MoveUpClick'#0#0#11'TToolButton'#13'tbActMoveDown'#4'Left'#2'f'#4'Hint'#6#9
-  +'Move down'#3'Top'#2#2#10'ImageIndex'#2#3#7'OnClick'#7#18'tbActMoveDownClick'
-  +#0#0#11'TToolButton'#14'tbActInsertRow'#4'Left'#3#139#0#4'Hint'#6#7'Add row'
-  +#3'Top'#2#2#10'ImageIndex'#2#4#7'OnClick'#7#19'tbActInsertRowClick'#0#0#11'T'
-  +'ToolButton'#14'tbActDeleteRow'#4'Left'#3#171#0#4'Hint'#6#18'Delete current '
-  +'row'#3'Top'#2#2#10'ImageIndex'#2#5#7'OnClick'#7#19'tbActDeleteRowClick'#0#0
-  +#11'TToolButton'#11'ToolButton8'#4'Left'#3#203#0#6'Height'#2' '#3'Top'#2#2#5
-  +'Width'#2#5#7'Caption'#6#11'ToolButton2'#5'Style'#7#10'tbsDivider'#0#0#11'TT'
-  +'oolButton'#11'ToolButton9'#4'Left'#2'A'#6'Height'#2' '#3'Top'#2#2#5'Width'#2
-  +#5#7'Caption'#6#11'ToolButton3'#5'Style'#7#10'tbsDivider'#0#0#11'TToolButton'
-  +#12'ToolButton11'#4'Left'#3#134#0#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'C'
-  +'aption'#6#11'ToolButton4'#5'Style'#7#10'tbsDivider'#0#0#11'TToolButton'#12
-  +'tbActShowWbs'#4'Left'#3#208#0#4'Hint'#6#29'Show work breakdown structure'#3
-  +'Top'#2#2#10'ImageIndex'#2#6#7'OnClick'#7#17'tbActShowWbsClick'#5'Style'#7#8
-  +'tbsCheck'#0#0#11'TToolButton'#12'ToolButton12'#4'Left'#3#240#0#6'Height'#2
-  +' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#12'ToolButton12'#5'Style'#7#10'tbsD'
-  +'ivider'#0#0#11'TToolButton'#12'tbActCopyAll'#4'Left'#3'z'#1#4'Hint'#6'$Copy'
-  +' all activities in the clipboard'#3'Top'#2#2#7'Caption'#6#12'tbActCopyAll'
-  ,#10'ImageIndex'#2#11#7'OnClick'#7#17'tbActCopyAllClick'#0#0#11'TToolButton'
-  +#12'ToolButton15'#4'Left'#3#186#1#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'C'
-  +'aption'#6#12'ToolButton15'#5'Style'#7#10'tbsDivider'#0#0#11'TToolButton'#13
-  +'tbActClearAll'#4'Left'#3#191#1#4'Hint'#6#20'Clear all activities'#3'Top'#2#2
-  +#7'Caption'#6#13'tbActClearAll'#10'ImageIndex'#2#13#7'OnClick'#7#18'tbActCle'
-  +'arAllClick'#0#0#11'TToolButton'#14'tbActCopyGroup'#4'Left'#3':'#1#4'Hint'#6
-  +' Copy current group of activities'#3'Top'#2#2#7'Caption'#6#14'tbActCopyGrou'
-  +'p'#10'ImageIndex'#2#9#7'OnClick'#7#19'tbActCopyGroupClick'#0#0#11'TToolButt'
-  +'on'#15'tbActPasteGroup'#4'Left'#3'Z'#1#4'Hint'#6#27'Paste a group of activi'
-  +'ties'#3'Top'#2#2#7'Caption'#6#15'tbActPasteGroup'#7'Enabled'#8#10'ImageInde'
-  +'x'#2#10#7'OnClick'#7#20'tbActPasteGroupClick'#0#0#11'TToolButton'#17'tbActM'
-  +'oveFromText'#4'Left'#3#154#1#4'Hint'#6'-Move the activities from the text t'
-  +'o the grid'#3'Top'#2#2#7'Caption'#6#17'tbActMoveFromText'#10'ImageIndex'#2
-  +#12#7'OnClick'#7#22'tbActMoveFromTextClick'#0#0#11'TToolButton'#13'tbActMove'
-  +'Back'#4'Left'#3#245#0#4'Hint'#6'#Shift backward the dates of one day'#3'Top'
-  +#2#2#10'ImageIndex'#2#7#7'OnClick'#7#18'tbActMoveBackClick'#0#0#11'TToolButt'
-  +'on'#12'tbActMoveFor'#4'Left'#3#21#1#4'Hint'#6'"Shift forward the dates of o'
-  +'ne day'#3'Top'#2#2#10'ImageIndex'#2#8#7'OnClick'#7#17'tbActMoveForClick'#0#0
-  +#11'TToolButton'#12'ToolButton14'#4'Left'#3'5'#1#6'Height'#2' '#3'Top'#2#2#5
-  +'Width'#2#5#7'Caption'#6#12'ToolButton14'#5'Style'#7#10'tbsDivider'#0#0#0#9
-  +'TSplitter'#10'spActNotes'#6'Cursor'#7#8'crVSplit'#4'Left'#2#1#6'Height'#2#5
-  +#3'Top'#2'h'#5'Width'#3#155#2#5'Align'#7#8'alBottom'#12'ResizeAnchor'#7#8'ak'
-  +'Bottom'#0#0#6'TPanel'#7'pnDates'#4'Left'#2#1#6'Height'#2'Q'#3'Top'#2'm'#5'W'
-  +'idth'#3#155#2#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'#12'ClientHe'
-  +'ight'#2'Q'#11'ClientWidth'#3#155#2#8'TabOrder'#2#3#0#5'TMemo'#10'meActNotes'
-  +#4'Left'#2#4#6'Height'#2'%'#3'Top'#2#4#5'Width'#3#147#2#5'Align'#7#8'alClien'
-  +'t'#20'BorderSpacing.Around'#2#4#8'OnChange'#7#16'meActNotesChange'#10'Scrol'
-  +'lBars'#7#14'ssAutoVertical'#8'TabOrder'#2#0#0#0#6'TPanel'#10'pnDetDates'#4
-  +'Left'#2#0#6'Height'#2'$'#3'Top'#2'-'#5'Width'#3#155#2#5'Align'#7#8'alBottom'
-  +#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#2'$'#11'ClientWidth'#3#155#2#8
-  +'TabOrder'#2#1#0#6'TLabel'#8'lbCalAct'#4'Left'#2#9#6'Height'#2#18#3'Top'#2#8
-  +#5'Width'#3#139#0#7'Caption'#6#19'Default start date:'#11'ParentColor'#8#0#0
-  +#17'TZVDateTimePicker'#8'dtCalAct'#4'Left'#3#189#0#6'Height'#2#24#3'Top'#2#4
-  +#5'Width'#3#139#0#10'ArrowShape'#7#14'asModernLarger'#11'CenturyFrom'#3#149#7
-  +#7'MaxDate'#5#0#0#0#0#0#4#146#180#20'@'#7'MinDate'#5#0#0#0#0#0#0#20#210#14
-  +#192#8'AutoSize'#8#8'TabOrder'#2#0#7'TabStop'#8#13'DateSeparator'#6#1'-'#17
-  +'TrailingSeparator'#8#15'TextForNullDate'#6#4'NULL'#12'LeadingZeros'#9#4'Kin'
-  +'d'#7#7'dtkDate'#13'TimeSeparator'#6#1':'#10'TimeFormat'#7#4'tf24'#11'TimeDi'
-  +'splay'#7#5'tdHMS'#8'DateMode'#7#10'dmComboBox'#4'Date'#5#0#0#0#0#0#0#130#164
-  +#14'@'#4'Time'#5#0#0#0#168#184#248'x'#238#254'?'#20'UseDefaultSeparators'#8
-  +#14'AutoButtonSize'#9#17'HideDateTimeParts'#11#0#10'MonthNames'#6#4'Long'#0#0
-  +#6'TLabel'#10'lbActDates'#4'Left'#3'q'#1#6'Height'#2#18#3'Top'#2#8#5'Width'#2
-  +'H'#7'Caption'#6#9'No dates.'#11'ParentColor'#8#0#0#0#0#0#9'TSplitter'#12'sp'
-  +'Activities'#6'Cursor'#7#8'crVSplit'#4'Left'#2#0#6'Height'#2#5#3'Top'#3#170#0
-  +#5'Width'#3#157#2#5'Align'#7#8'alBottom'#12'ResizeAnchor'#7#8'akBottom'#7'Vi'
-  +'sible'#8#0#0#0#6'TPanel'#14'pnSubNotesGrid'#4'Left'#2#0#6'Height'#3#144#1#3
-  +'Top'#2'|'#5'Width'#3#170#0#5'Align'#7#6'alLeft'#10'BevelOuter'#7#6'bvNone'
-  +#12'ClientHeight'#3#144#1#11'ClientWidth'#3#170#0#8'TabOrder'#2#3#0#11'TStri'
-  +'ngGrid'#8'grTitles'#4'Left'#2#0#6'Height'#3'b'#1#3'Top'#2#0#5'Width'#3#170#0
-  +#5'Align'#7#8'alClient'#8'AutoEdit'#8#8'ColCount'#2#3#9'FixedCols'#2#0#4'Fla'
-  +'t'#9#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'#10
-  +'goHorzLine'#19'goDrawFocusSelected'#11'goColSizing'#14'goSmoothScroll'#0#11
-  +'ParentColor'#9#9'PopupMenu'#7#7'pmNotes'#8'TabOrder'#2#0#10'OnDblClick'#7#16
-  +'grTitlesDblClick'#10'OnDrawCell'#7#16'grTitlesDrawCell'#9'OnKeyDown'#7#15'g'
-  +'rTitlesKeyDown'#12'OnSelectCell'#7#18'grTitlesSelectCell'#0#0#6'TPanel'#10
-  +'pnBtnNotes'#4'Left'#2#0#6'Height'#2'('#3'Top'#3'b'#1#5'Width'#3#170#0#5'Ali'
+  +'bStop'#8#0#0#0#9'TSplitter'#15'spSplitterNotes'#4'Left'#3#170#0#6'Height'#3
+  +#145#1#3'Top'#2'|'#5'Width'#2#5#0#0#6'TPanel'#10'pnTextTags'#4'Left'#3#175#0
+  +#6'Height'#3#145#1#3'Top'#2'|'#5'Width'#3#157#2#5'Align'#7#8'alClient'#10'Be'
+  +'velOuter'#7#6'bvNone'#12'ClientHeight'#3#145#1#11'ClientWidth'#3#157#2#8'Ta'
+  +'bOrder'#2#1#0#6'TPanel'#10'pnFindText'#4'Left'#2#0#6'Height'#2'"'#3'Top'#3
+  +#176#0#5'Width'#3#157#2#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'#12
+  +'ClientHeight'#2'"'#11'ClientWidth'#3#157#2#8'TabOrder'#2#1#7'Visible'#8#0#7
+  +'TButton'#11'bnFindFirst'#4'Left'#3')'#1#6'Height'#2#27#3'Top'#2#3#5'Width'#3
+  +#180#0#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#10'Find first'#7'OnC'
+  +'lick'#7#13'FindFirstNext'#8'TabOrder'#2#1#0#0#7'TButton'#10'bnFindNext'#4'L'
+  +'eft'#3#227#1#6'Height'#2#27#3'Top'#2#3#5'Width'#3#180#0#7'Anchors'#11#5'akT'
+  +'op'#7'akRight'#0#7'Caption'#6#9'Find next'#7'OnClick'#7#13'FindFirstNext'#8
+  +'TabOrder'#2#2#0#0#5'TEdit'#12'edLocateText'#4'Left'#2#5#6'Height'#2#27#3'To'
+  +'p'#2#3#5'Width'#3#20#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#8'Auto'
+  +'Size'#8#10'OnKeyPress'#7#20'edLocateTextKeyPress'#8'TabOrder'#2#0#0#0#0#6'T'
+  +'Panel'#13'pnAttachments'#4'Left'#3#204#1#6'Height'#3#165#0#3'Top'#2#0#5'Wid'
+  +'th'#3#203#0#5'Align'#7#7'alRight'#18'BorderSpacing.Left'#2#6#19'BorderSpaci'
+  +'ng.Right'#2#6#20'BorderSpacing.Bottom'#2#6#10'BevelOuter'#7#6'bvNone'#12'Cl'
+  +'ientHeight'#3#165#0#11'ClientWidth'#3#203#0#8'TabOrder'#2#2#0#6'TLabel'#10
+  +'lbListTags'#4'Left'#2#0#6'Height'#2#20#3'Top'#2#0#5'Width'#3#203#0#5'Align'
+  +#7#5'alTop'#8'AutoSize'#8#7'Caption'#6#4'Tags'#11'ParentColor'#8#0#0#8'TList'
+  +'Box'#11'lbTagsNames'#4'Left'#2#0#6'Height'#3#145#0#3'Top'#2#20#5'Width'#3
+  +#203#0#5'Align'#7#8'alClient'#10'ItemHeight'#2#0#10'OnDblClick'#7#19'lbTagsN'
+  +'amesDblClick'#6'OnExit'#7#15'lbTagsNamesExit'#11'ParentColor'#9#11'ScrollWi'
+  +'dth'#3#201#0#8'TabOrder'#2#0#0#0#0#9'TSplitter'#13'spSplitterAtt'#4'Left'#3
+  +#193#1#6'Height'#3#171#0#3'Top'#2#0#5'Width'#2#5#5'Align'#7#7'alRight'#12'Re'
+  +'sizeAnchor'#7#7'akRight'#0#0#6'TPanel'#6'pnText'#4'Left'#2#0#6'Height'#3#171
+  +#0#3'Top'#2#0#5'Width'#3#193#1#5'Align'#7#8'alClient'#10'BevelOuter'#7#6'bvN'
+  +'one'#12'ClientHeight'#3#171#0#11'ClientWidth'#3#193#1#11'ParentColor'#8#8'T'
+  +'abOrder'#2#0#0#9'TRichMemo'#6'dbText'#6'Cursor'#7#7'crIBeam'#4'Left'#2#6#6
+  +'Height'#3#165#0#3'Top'#2#0#5'Width'#3#181#1#5'Align'#7#8'alClient'#18'Borde'
+  +'rSpacing.Left'#2#6#19'BorderSpacing.Right'#2#6#20'BorderSpacing.Bottom'#2#6
+  +#25'BorderSpacing.InnerBorder'#2#20#5'Color'#7#7'clWhite'#10'Font.Color'#7#7
+  +'clBlack'#13'HideSelection'#8#7'OnClick'#7#11'dbTextClick'#9'OnKeyDown'#7#13
+  ,'dbTextKeyDown'#7'OnKeyUp'#7#11'dbTextKeyUp'#9'OnMouseUp'#7#13'dbTextMouseUp'
+  +#12'OnMouseWheel'#7#16'dbTextMouseWheel'#10'ParentFont'#8#9'PopupMenu'#7#6'p'
+  +'mText'#10'ScrollBars'#7#10'ssVertical'#8'TabOrder'#2#0#8'WantTabs'#9#0#0#6
+  +'TPanel'#10'pnPassword'#4'Left'#2#12#6'Height'#3#160#0#3'Top'#2'X'#5'Width'#3
+  +#250#0#18'BorderSpacing.Left'#2#6#19'BorderSpacing.Right'#2#6#20'BorderSpaci'
+  +'ng.Bottom'#2#6#10'BevelOuter'#7#6'bvNone'#11'BorderWidth'#2#1#11'BorderStyl'
+  +'e'#7#8'bsSingle'#12'ClientHeight'#3#156#0#11'ClientWidth'#3#246#0#5'Color'#7
+  +#8'clWindow'#11'ParentColor'#8#8'TabOrder'#2#1#7'Visible'#8#0#6'TLabel'#8'lb'
+  +'PwdTop'#4'Left'#2#0#6'Height'#2#15#3'Top'#2#7#5'Width'#3#248#0#9'Alignment'
+  +#7#8'taCenter'#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#7'Caption'#6' I'
+  +'nsert password to show the text'#11'ParentColor'#8#8'WordWrap'#9#8'OnResize'
+  +#7#14'lbPwdTopResize'#0#0#6'TLabel'#11'lbPwdBottom'#4'Left'#2#0#6'Height'#2
+  +#15#3'Top'#2'G'#5'Width'#3#248#0#9'Alignment'#7#8'taCenter'#7'Anchors'#11#5
+  +'akTop'#6'akLeft'#7'akRight'#0#7'Caption'#6#27'The password is not correct'
+  +#10'Font.Color'#4#213#30#30#0#11'ParentColor'#8#10'ParentFont'#8#7'Visible'#8
+  +#8'WordWrap'#9#0#0#5'TEdit'#10'edPassword'#4'Left'#2#20#6'Height'#2#23#3'Top'
+  +#2'#'#5'Width'#3#206#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#8'EchoM'
+  +'ode'#7#10'emPassword'#10'OnKeyPress'#7#18'edPasswordKeyPress'#12'PasswordCh'
+  +'ar'#6#1'*'#8'TabOrder'#2#0#0#0#0#12'TIpHtmlPanel'#7'ipPrint'#4'Left'#3'2'#2
+  +#6'Height'#2'2'#3'Top'#2'@'#5'Width'#3#170#0#13'FixedTypeface'#6#11'Courier '
+  +'New'#15'DefaultTypeFace'#6#7'default'#15'DefaultFontSize'#2#12#10'FlagError'
+  +'s'#8#24'PrintSettings.MarginLeft'#5#0#0#0#0#0#0#0#128#254'?'#23'PrintSettin'
+  +'gs.MarginTop'#5#0#0#0#0#0#0#0#128#254'?'#25'PrintSettings.MarginRight'#5#0#0
+  +#0#0#0#0#0#128#254'?'#26'PrintSettings.MarginBottom'#5#0#0#0#0#0#0#0#128#254
+  +'?'#8'TabOrder'#2#2#7'Visible'#8#0#0#0#6'TPanel'#12'pnActivities'#4'Left'#2#0
+  +#6'Height'#3#191#0#3'Top'#3#210#0#5'Width'#3#157#2#5'Align'#7#8'alBottom'#12
+  +'ClientHeight'#3#191#0#11'ClientWidth'#3#157#2#8'TabOrder'#2#4#7'Visible'#8#0
+  +#11'TStringGrid'#9'grActGrid'#4'Left'#2#1#6'Height'#2'E'#3'Top'#2'#'#5'Width'
+  +#3#155#2#5'Align'#7#8'alClient'#14'ExtendedSelect'#8#4'Flat'#9#7'Options'#11
+  +#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'#10'goHorzLine'#11'go'
+  +'ColSizing'#9'goEditing'#18'goDblClickAutoSize'#14'goSmoothScroll'#0#8'TabOr'
+  +'der'#2#1#10'OnDrawCell'#7#17'grActGridDrawCell'#13'OnEditingDone'#7#20'grAc'
+  +'tGridEditingDone'#13'OnGetEditMask'#7#20'grActGridGetEditMask'#9'OnKeyDown'
+  +#7#16'grActGridKeyDown'#7'OnKeyUp'#7#14'grActGridKeyUp'#11'OnMouseDown'#7#18
+  +'grActGridMouseDown'#15'OnPrepareCanvas'#7#22'grActGridPrepareCanvas'#11'OnS'
+  +'election'#7#18'grActGridSelection'#12'OnSelectCell'#7#19'grActGridSelectCel'
+  +'l'#13'OnSetEditText'#7#20'grActGridSetEditText'#0#0#8'TToolBar'#8'tbActBar'
+  +#4'Left'#2#1#6'Height'#2'"'#3'Top'#2#1#5'Width'#3#155#2#8'AutoSize'#9#12'But'
+  +'tonHeight'#2' '#11'ButtonWidth'#2' '#6'Images'#7#17'ilImageBarActGrid'#14'P'
+  +'arentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#11'Transparent'#9#0#11'TTool'
+  +'Button'#12'tbActIndLeft'#4'Left'#2#1#4'Hint'#6#11'Indent left'#3'Top'#2#2#8
+  +'AutoSize'#9#10'ImageIndex'#2#0#7'OnClick'#7#17'tbActIndLeftClick'#0#0#11'TT'
+  +'oolButton'#13'tbActIndRight'#4'Left'#2'!'#4'Hint'#6#12'Indent right'#3'Top'
+  +#2#2#8'AutoSize'#9#10'ImageIndex'#2#1#7'OnClick'#7#18'tbActIndRightClick'#0#0
+  +#11'TToolButton'#11'tbActMoveUp'#4'Left'#2'F'#4'Hint'#6#7'Move up'#3'Top'#2#2
+  +#10'ImageIndex'#2#2#7'OnClick'#7#16'tbActMoveUpClick'#0#0#11'TToolButton'#13
+  +'tbActMoveDown'#4'Left'#2'f'#4'Hint'#6#9'Move down'#3'Top'#2#2#10'ImageIndex'
+  +#2#3#7'OnClick'#7#18'tbActMoveDownClick'#0#0#11'TToolButton'#14'tbActInsertR'
+  +'ow'#4'Left'#3#139#0#4'Hint'#6#7'Add row'#3'Top'#2#2#10'ImageIndex'#2#4#7'On'
+  +'Click'#7#19'tbActInsertRowClick'#0#0#11'TToolButton'#14'tbActDeleteRow'#4'L'
+  +'eft'#3#171#0#4'Hint'#6#18'Delete current row'#3'Top'#2#2#10'ImageIndex'#2#5
+  +#7'OnClick'#7#19'tbActDeleteRowClick'#0#0#11'TToolButton'#11'ToolButton8'#4
+  +'Left'#3#203#0#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#11'ToolBu'
+  +'tton2'#5'Style'#7#10'tbsDivider'#0#0#11'TToolButton'#11'ToolButton9'#4'Left'
+  +#2'A'#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#11'ToolButton3'#5
+  +'Style'#7#10'tbsDivider'#0#0#11'TToolButton'#12'ToolButton11'#4'Left'#3#134#0
+  +#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#11'ToolButton4'#5'Style'
+  +#7#10'tbsDivider'#0#0#11'TToolButton'#12'tbActShowWbs'#4'Left'#3#208#0#4'Hin'
+  +'t'#6#29'Show work breakdown structure'#3'Top'#2#2#10'ImageIndex'#2#6#7'OnCl'
+  +'ick'#7#17'tbActShowWbsClick'#5'Style'#7#8'tbsCheck'#0#0#11'TToolButton'#12
+  +'ToolButton12'#4'Left'#3#240#0#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'Capt'
+  +'ion'#6#12'ToolButton12'#5'Style'#7#10'tbsDivider'#0#0#11'TToolButton'#12'tb'
+  +'ActCopyAll'#4'Left'#3'z'#1#4'Hint'#6'$Copy all activities in the clipboard'
+  +#3'Top'#2#2#7'Caption'#6#12'tbActCopyAll'#10'ImageIndex'#2#11#7'OnClick'#7#17
+  ,'tbActCopyAllClick'#0#0#11'TToolButton'#12'ToolButton15'#4'Left'#3#186#1#6'H'
+  +'eight'#2' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#12'ToolButton15'#5'Style'#7
+  +#10'tbsDivider'#0#0#11'TToolButton'#13'tbActClearAll'#4'Left'#3#191#1#4'Hint'
+  +#6#20'Clear all activities'#3'Top'#2#2#7'Caption'#6#13'tbActClearAll'#10'Ima'
+  +'geIndex'#2#13#7'OnClick'#7#18'tbActClearAllClick'#0#0#11'TToolButton'#14'tb'
+  +'ActCopyGroup'#4'Left'#3':'#1#4'Hint'#6' Copy current group of activities'#3
+  +'Top'#2#2#7'Caption'#6#14'tbActCopyGroup'#10'ImageIndex'#2#9#7'OnClick'#7#19
+  +'tbActCopyGroupClick'#0#0#11'TToolButton'#15'tbActPasteGroup'#4'Left'#3'Z'#1
+  +#4'Hint'#6#27'Paste a group of activities'#3'Top'#2#2#7'Caption'#6#15'tbActP'
+  +'asteGroup'#7'Enabled'#8#10'ImageIndex'#2#10#7'OnClick'#7#20'tbActPasteGroup'
+  +'Click'#0#0#11'TToolButton'#17'tbActMoveFromText'#4'Left'#3#154#1#4'Hint'#6
+  +'-Move the activities from the text to the grid'#3'Top'#2#2#7'Caption'#6#17
+  +'tbActMoveFromText'#10'ImageIndex'#2#12#7'OnClick'#7#22'tbActMoveFromTextCli'
+  +'ck'#0#0#11'TToolButton'#13'tbActMoveBack'#4'Left'#3#245#0#4'Hint'#6'#Shift '
+  +'backward the dates of one day'#3'Top'#2#2#10'ImageIndex'#2#7#7'OnClick'#7#18
+  +'tbActMoveBackClick'#0#0#11'TToolButton'#12'tbActMoveFor'#4'Left'#3#21#1#4'H'
+  +'int'#6'"Shift forward the dates of one day'#3'Top'#2#2#10'ImageIndex'#2#8#7
+  +'OnClick'#7#17'tbActMoveForClick'#0#0#11'TToolButton'#12'ToolButton14'#4'Lef'
+  +'t'#3'5'#1#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#12'ToolButton'
+  +'14'#5'Style'#7#10'tbsDivider'#0#0#0#9'TSplitter'#10'spActNotes'#6'Cursor'#7
+  +#8'crVSplit'#4'Left'#2#1#6'Height'#2#5#3'Top'#2'h'#5'Width'#3#155#2#5'Align'
+  +#7#8'alBottom'#12'ResizeAnchor'#7#8'akBottom'#0#0#6'TPanel'#7'pnDates'#4'Lef'
+  +'t'#2#1#6'Height'#2'Q'#3'Top'#2'm'#5'Width'#3#155#2#5'Align'#7#8'alBottom'#10
+  +'BevelOuter'#7#6'bvNone'#12'ClientHeight'#2'Q'#11'ClientWidth'#3#155#2#8'Tab'
+  +'Order'#2#3#0#5'TMemo'#10'meActNotes'#4'Left'#2#4#6'Height'#2'%'#3'Top'#2#4#5
+  +'Width'#3#147#2#5'Align'#7#8'alClient'#20'BorderSpacing.Around'#2#4#8'OnChan'
+  +'ge'#7#16'meActNotesChange'#10'ScrollBars'#7#14'ssAutoVertical'#8'TabOrder'#2
+  +#0#0#0#6'TPanel'#10'pnDetDates'#4'Left'#2#0#6'Height'#2'$'#3'Top'#2'-'#5'Wid'
+  +'th'#3#155#2#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'#12'ClientHeig'
+  +'ht'#2'$'#11'ClientWidth'#3#155#2#8'TabOrder'#2#1#0#6'TLabel'#8'lbCalAct'#4
+  +'Left'#2#9#6'Height'#2#15#3'Top'#2#8#5'Width'#2']'#7'Caption'#6#19'Default s'
+  +'tart date:'#11'ParentColor'#8#0#0#17'TZVDateTimePicker'#8'dtCalAct'#4'Left'
+  +#3#189#0#6'Height'#2#24#3'Top'#2#4#5'Width'#3#139#0#10'ArrowShape'#7#14'asMo'
+  +'dernLarger'#11'CenturyFrom'#3#149#7#7'MaxDate'#5#0#0#0#0#0#4#146#180#20'@'#7
+  +'MinDate'#5#0#0#0#0#0#0#20#210#14#192#8'AutoSize'#8#8'TabOrder'#2#0#7'TabSto'
+  +'p'#8#13'DateSeparator'#6#1'-'#17'TrailingSeparator'#8#15'TextForNullDate'#6
+  +#4'NULL'#12'LeadingZeros'#9#4'Kind'#7#7'dtkDate'#13'TimeSeparator'#6#1':'#10
+  +'TimeFormat'#7#4'tf24'#11'TimeDisplay'#7#5'tdHMS'#8'DateMode'#7#10'dmComboBo'
+  +'x'#4'Date'#5#0#0#0#0#0#0#130#164#14'@'#4'Time'#5#0#0#0#168#184#248'x'#238
+  +#254'?'#20'UseDefaultSeparators'#8#14'AutoButtonSize'#9#17'HideDateTimeParts'
+  +#11#0#10'MonthNames'#6#4'Long'#0#0#6'TLabel'#10'lbActDates'#4'Left'#3'q'#1#6
+  +'Height'#2#15#3'Top'#2#8#5'Width'#2'2'#7'Caption'#6#9'No dates.'#11'ParentCo'
+  +'lor'#8#0#0#0#0#0#9'TSplitter'#12'spActivities'#6'Cursor'#7#8'crVSplit'#4'Le'
+  +'ft'#2#0#6'Height'#2#5#3'Top'#3#171#0#5'Width'#3#157#2#5'Align'#7#8'alBottom'
+  +#12'ResizeAnchor'#7#8'akBottom'#7'Visible'#8#0#0#0#6'TPanel'#14'pnSubNotesGr'
+  +'id'#4'Left'#2#0#6'Height'#3#145#1#3'Top'#2'|'#5'Width'#3#170#0#5'Align'#7#6
+  +'alLeft'#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#145#1#11'ClientWidth'
+  +#3#170#0#8'TabOrder'#2#3#0#11'TStringGrid'#8'grTitles'#4'Left'#2#0#6'Height'
+  +#3'c'#1#3'Top'#2#0#5'Width'#3#170#0#5'Align'#7#8'alClient'#8'AutoEdit'#8#8'C'
+  +'olCount'#2#3#9'FixedCols'#2#0#4'Flat'#9#7'Options'#11#15'goFixedVertLine'#15
+  +'goFixedHorzLine'#10'goVertLine'#10'goHorzLine'#19'goDrawFocusSelected'#11'g'
+  +'oColSizing'#14'goSmoothScroll'#0#11'ParentColor'#9#9'PopupMenu'#7#7'pmNotes'
+  +#8'TabOrder'#2#0#10'OnDblClick'#7#16'grTitlesDblClick'#10'OnDrawCell'#7#16'g'
+  +'rTitlesDrawCell'#9'OnKeyDown'#7#15'grTitlesKeyDown'#11'OnSelection'#7#17'gr'
+  +'TitlesSelection'#12'OnSelectCell'#7#18'grTitlesSelectCell'#0#0#6'TPanel'#10
+  +'pnBtnNotes'#4'Left'#2#0#6'Height'#2'('#3'Top'#3'c'#1#5'Width'#3#170#0#5'Ali'
   +'gn'#7#8'alBottom'#20'BorderSpacing.Bottom'#2#6#10'BevelOuter'#7#6'bvNone'#11
-  +'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#2'&'#11'ClientWidth'#3#168#0#8
+  +'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#2'$'#11'ClientWidth'#3#166#0#8
   +'TabOrder'#2#1#0#7'TBitBtn'#9'bnNotesUp'#4'Left'#2#6#6'Height'#2' '#3'Top'#2
   +#4#5'Width'#2' '#10'Glyph.Data'#10':'#9#0#0'6'#9#0#0'BM6'#9#0#0#0#0#0#0'6'#0
   +#0#0'('#0#0#0#24#0#0#0#24#0#0#0#1#0' '#0#0#0#0#0#0#9#0#0'd'#0#0#0'd'#0#0#0#0
@@ -1755,7 +1755,7 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +#255#255#255#0#255#255#255#0#255#255#255#0#255#255#255#0#255#255#255#0#255
   +#255#255#0#255#255#255#0#7'OnClick'#7#16'bnNotesDownClick'#8'TabOrder'#2#1#7
   +'TabStop'#8#0#0#0#0#0#9'TSplitter'#14'spSplitterFind'#6'Cursor'#7#8'crVSplit'
-  +#4'Left'#2#0#6'Height'#2#5#3'Top'#3'.'#2#5'Width'#3#251#3#5'Align'#7#8'alBot'
+  +#4'Left'#2#0#6'Height'#2#5#3'Top'#3'/'#2#5'Width'#3#251#3#5'Align'#7#8'alBot'
   +'tom'#12'ResizeAnchor'#7#8'akBottom'#7'Visible'#8#0#0#8'TToolBar'#9'tbToolBa'
   +'r'#4'Left'#2#0#6'Height'#2'"'#3'Top'#2#0#5'Width'#3#251#3#8'AutoSize'#9#12
   +'ButtonHeight'#2' '#11'ButtonWidth'#2' '#6'Images'#7#18'ilImageListToolbar'
@@ -1841,9 +1841,9 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +'geIndex'#2#9#7'OnClick'#7#12'tbPasteClick'#0#0#11'TToolButton'#12'ToolButto'
   +'n13'#4'Left'#3'U'#1#6'Height'#2' '#3'Top'#2#2#5'Width'#2#5#7'Caption'#6#12
   +'ToolButton13'#5'Style'#7#10'tbsDivider'#0#0#0#6'TPanel'#14'pnGridSubjects'#4
-  +'Left'#2#0#6'Height'#3#12#2#3'Top'#2'"'#5'Width'#3#170#0#5'Align'#7#6'alLeft'
-  +#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#12#2#11'ClientWidth'#3#170#0#8
-  +'TabOrder'#2#6#0#7'TDBGrid'#10'grSubjects'#4'Left'#2#0#6'Height'#3#131#1#3'T'
+  +'Left'#2#0#6'Height'#3#13#2#3'Top'#2'"'#5'Width'#3#170#0#5'Align'#7#6'alLeft'
+  +#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#3#13#2#11'ClientWidth'#3#170#0#8
+  +'TabOrder'#2#6#0#7'TDBGrid'#10'grSubjects'#4'Left'#2#0#6'Height'#3#132#1#3'T'
   +'op'#2#0#5'Width'#3#170#0#5'Align'#7#8'alClient'#11'AutoAdvance'#7#6'aaNone'
   +#5'Color'#7#8'clWindow'#7'Columns'#14#1#7'MinSize'#3#200#0#7'MaxSize'#3#244#1
   +#13'Title.Caption'#6#8'Subjects'#5'Width'#3#232#3#9'FieldName'#6#12'Subjects'
@@ -1853,15 +1853,15 @@ LazarusResources.Add('TfmMain','FORMDATA',[
   +'dgDisableDelete'#0#9'PopupMenu'#7#10'pmSubjects'#10'Scrollbars'#7#14'ssAuto'
   +'Vertical'#8'TabOrder'#2#0#6'OnExit'#7#14'grSubjectsExit'#9'OnKeyDown'#7#17
   +'grSubjectsKeyDown'#15'OnPrepareCanvas'#7#23'grSubjectsPrepareCanvas'#0#0#7
-  +'TDBMemo'#9'dbSubComm'#4'Left'#2#6#6'Height'#2'P'#3'Top'#3#182#1#5'Width'#3
+  +'TDBMemo'#9'dbSubComm'#4'Left'#2#6#6'Height'#2'P'#3'Top'#3#183#1#5'Width'#3
   +#158#0#5'Align'#7#8'alBottom'#20'BorderSpacing.Around'#2#6#5'Color'#7#6'clFo'
   +'rm'#9'DataField'#6#16'SubjectsComments'#10'DataSource'#7#10'dsSubjects'#8'R'
   +'eadOnly'#9#10'ScrollBars'#7#14'ssAutoVertical'#8'TabOrder'#2#1#0#0#9'TSplit'
   ,'ter'#17'spSplitterSubComm'#6'Cursor'#7#8'crVSplit'#4'Left'#2#0#6'Height'#2#5
-  +#3'Top'#3#171#1#5'Width'#3#170#0#5'Align'#7#8'alBottom'#12'ResizeAnchor'#7#8
+  +#3'Top'#3#172#1#5'Width'#3#170#0#5'Align'#7#8'alBottom'#12'ResizeAnchor'#7#8
   +'akBottom'#0#0#6'TPanel'#13'pnBtnSubjects'#4'Left'#2#0#6'Height'#2'('#3'Top'
-  +#3#131#1#5'Width'#3#170#0#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'
-  +#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#2'&'#11'ClientWidth'#3#168#0
+  +#3#132#1#5'Width'#3#170#0#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'
+  +#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#2'$'#11'ClientWidth'#3#166#0
   +#8'TabOrder'#2#3#0#7'TBitBtn'#7'bnSubUp'#4'Left'#2#8#6'Height'#2' '#3'Top'#2
   +#4#5'Width'#2' '#10'Glyph.Data'#10':'#9#0#0'6'#9#0#0'BM6'#9#0#0#0#0#0#0'6'#0
   +#0#0'('#0#0#0#24#0#0#0#24#0#0#0#1#0' '#0#0#0#0#0#0#9#0#0'd'#0#0#0'd'#0#0#0#0

@@ -392,6 +392,7 @@ type
       );
     procedure grTitlesSelectCell(Sender: TObject; aCol, aRow: Integer;
       var CanSelect: Boolean);
+    procedure grTitlesSelection(Sender: TObject; aCol, aRow: Integer);
     procedure lbAttNamesDblClick(Sender: TObject);
     procedure lbAttNamesExit(Sender: TObject);
     procedure lbPwdTopResize(Sender: TObject);
@@ -720,7 +721,19 @@ const
 
 implementation
 
-uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9, UnitCopyright;
+uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9, UnitCopyright{$IFDEF WINDOWS}, shlobj{$ENDIF};
+
+{$IFDEF WINDOWS}
+// added by Artyom Stetsenko
+function GetWinHomeDir:string;
+var
+  AppDataPath: Array[0..MaxPathLen] of Char;
+begin
+  AppDataPath:='';
+  SHGetSpecialFolderPath(0,AppDataPath,CSIDL_LOCAL_APPDATA,false);
+  Result := AppDataPath;
+end;
+{$ENDIF}
 
 { TfmMain }
 
@@ -822,7 +835,7 @@ begin
   dtCalAct.Date := Date;
   dbSubComm.Color := clForm;
   // Set home directory and data directories
-  myHomeDir := GetEnvironmentVariable('HOME') + '/.config';
+  myHomeDir := {$IFNDEF WINDOWS}GetEnvironmentVariable('HOME') + '/.config'{$ELSE}GetWinHomeDir{$ENDIF};
   if DirectoryExists(myHomeDir + DirectorySeparator + 'mynotex' +
     DirectorySeparator) = False then begin
     CreateDirUTF8(myHomeDir + DirectorySeparator + 'mynotex' + DirectorySeparator)
@@ -1029,16 +1042,23 @@ begin
   pnPassword.Align := alClient;
   // Enable or disable menu items to covert data from Tomboy and GNote
   miConvertTomboy.Enabled :=
+    {$IFNDEF WINDOWS}
     DirectoryExistsUTF8(GetEnvironmentVariable('HOME') + DirectorySeparator +
-    '.local/share/tomboy');
+    '.local/share/tomboy')
+    {$ELSE}False{$ENDIF};
   miConvertGNote.Enabled :=
+    {$IFNDEF WINDOWS}
     DirectoryExistsUTF8(GetEnvironmentVariable('HOME') + DirectorySeparator +
-    '.local/share/gnote');
+    '.local/share/gnote')
+    {$ELSE}False{$ENDIF};
   // Enable or disable user manual menu
   if FileExists(InstallDir + 'manual-mynotex-en.pdf') = False then begin
     miHelp.Visible := False;
     miLineHelp.Visible := False;
   end;
+  {$IFDEF WINDOWS}
+  sbStatusBar.Font.Name:='Arial';
+  {$ENDIF}
 end;
 
 procedure TfmMain.FormDragOver(Sender, Source: TObject; X, Y: Integer;
@@ -1071,7 +1091,7 @@ begin
       else
         OpenDataTables(Application.Params[1]);
     end
-    else if flOpenLastFile = True then begin
+    else if flOpenLastFile then begin
       if LastDatabase1 <> '' then
         OpenDataTables(LastDatabase1)
     end;
@@ -1110,7 +1130,7 @@ begin
   // Destroy bookmarks list
   BookmarkList.Free;
   // Set home directory and data directories
-  myHomeDir := GetEnvironmentVariable('HOME') + '/.config';
+  myHomeDir := {$IFNDEF WINDOWS}GetEnvironmentVariable('HOME') + '/.config'{$ELSE}GetWinHomeDir{$ENDIF};
   // Save main form dimensions and other elements to ini file
   try
     MyIni := TIniFile.Create(myHomeDir + DirectorySeparator + 'mynotex' +
@@ -2018,6 +2038,8 @@ begin
   lbTagsNames.ItemIndex := -1;
 end;
 
+
+
 procedure TfmMain.grTitlesDblClick(Sender: TObject);
 begin
   // Set the focus on title on double clic
@@ -2474,8 +2496,8 @@ begin
   end
   else begin sbStatusBar.Panels[0].Text := sbr003 + ' ' + IntToStr(sqNotes.RecNo) +
     ' ' + sbr004 + ' ' + IntToStr(sqNotes.RecordCount) + ' - ' + sbr009 + ' ' +
-    FormatDateTime(FDate.LongDateFormat,
-    sqNotes.FieldByName('NotesDTMod').AsDateTime) + ' ' + sbr010 + ' ' +
+    {$IFDEF WINDOWS}AnsiToUtf8({$ENDIF}FormatDateTime(FDate.LongDateFormat,
+    sqNotes.FieldByName('NotesDTMod').AsDateTime){$IFDEF WINDOWS}){$ENDIF} + ' ' + sbr010 + ' ' +
     FormatDateTime('hh:nn', sqNotes.FieldByName('NotesDTMod').AsDateTime);
   end;
 end;
@@ -2543,7 +2565,7 @@ begin
   // Save data if necessary and set flag to recreate tags list
   if sqNotes.FieldByName('NotesTags').AsString <> OldTagsValue then
     RecreateTagsList := True;
-  if IsMemoModified = True then begin
+  if IsMemoModified then begin
     if sqNotes.FieldByName('NotesCheckPwd').AsString = '' then
       sqNotes.FieldByName('NotesText').AsWideString :=
         SaveRichMemo(0, UTF8Length(dbText.Text), True)
@@ -2561,7 +2583,7 @@ end;
 procedure TfmMain.sqNotesBeforeScroll(DataSet: TDataSet);
 begin
   // Save data before scroll if richedit is modified
-  if IsMemoModified = True then
+  if IsMemoModified then
   begin
     sqNotes.Edit;
     sqNotes.Post;
@@ -2573,7 +2595,7 @@ begin
   // Recreate tags list if necessary
   // To complete data saving; no problem if it is repeated in SaveAllData
   sqNotes.ApplyUpdates;
-  if RecreateTagsList = True then begin
+  if RecreateTagsList then begin
     CreateTagsList;
     RecreateTagsList := False;
   end;
@@ -4369,7 +4391,7 @@ begin
   odOpenDialog.FileName := '';
   if odOpenDialog.Execute = True then begin
     CopyFile(odOpenDialog.FileName,
-      GetEnvironmentVariable('HOME') + '/.config' +
+      {$IFNDEF WINDOWS}GetEnvironmentVariable('HOME') + '/.config'{$ELSE}GetWinHomeDir{$ENDIF} +
         DirectorySeparator + 'mynotex' +
         DirectorySeparator + 'translation-' + VersMyNt);
     // Load and activate translation
@@ -4679,7 +4701,7 @@ begin
   StDest := StringReplace(StDest, #6, '>', [rfReplaceAll]);
   dbText.Text := StDest;
   if DirectoryExistsUTF8(ExtractFileNameWithoutExt(
-    sqSubjects.FileName)) = True then
+    sqSubjects.FileName)) then
       AttDir := ExtractFileNameWithoutExt(sqSubjects.FileName);
   // Format the text in the RichText
   try
@@ -7363,13 +7385,19 @@ begin
   end;
 end;
 
+
+
 procedure TfmMain.grTitlesSelectCell(Sender: TObject; aCol, aRow: Integer;
   var CanSelect: Boolean);
 begin
   // Select a note from its ID
-  if sqNotes.Active = True then begin
+  if (sqNotes.Active) and (sqNotes.FieldByName('IDNotes').AsString <> grTitles.Cells[0, aRow]) then
     sqNotes.Locate('IDNotes', grTitles.Cells[0, aRow], []);
-  end;
+end;
+
+procedure TfmMain.grTitlesSelection(Sender: TObject; aCol, aRow: Integer);
+begin
+
 end;
 
 procedure TfmMain.CreateAttachment(FileNames: array of String);
@@ -8610,6 +8638,8 @@ procedure TfmMain.SaveActivitiesData;
   var x, y: Integer;
     myData: String;
 begin
+  // add by Artyom Stetsenko
+  myData:='';
   // Save activities
   if sqNotes.State in [dsEdit, dsInsert] then begin
     // Empty grid
@@ -9925,7 +9955,7 @@ procedure TfmMain.Translation;
   myHomeDir: String;
 begin
   // Set home directory and data directories
-  myHomeDir := GetEnvironmentVariable('HOME') + '/.config';
+  myHomeDir := {$IFNDEF WINDOWS}GetEnvironmentVariable('HOME') + '/.config'{$ELSE}GetWinHomeDir{$ENDIF};
   // Copy file if existing in installation directory;
   // Directory mynotex has been already created
   if FileExistsUTF8(myHomeDir + DirectorySeparator + 'mynotex' +

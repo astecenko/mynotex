@@ -598,6 +598,8 @@ begin
   while IsList = True do
   begin
     gtk_text_iter_backward_char(@iStart);
+    // modified by Artyom Stetsenko
+    {$IFNDEF WINDOWS}
     if gtk_text_iter_is_start(@iStart) = True then
       IsList := False
     else if gtk_text_iter_get_char(@iStart) = Ord(LineEnding) then
@@ -611,24 +613,43 @@ begin
         gtk_text_iter_forward_char(@iStart);
       end;
     end;
+    {$ELSE}
+    if gtk_text_iter_is_start(@iStart) = True then
+      IsList := False
+    else if gtk_text_iter_get_char(@iStart) = Ord(#10) then
+    begin
+      gtk_text_iter_backward_char(@iStart);
+      if ((gtk_text_iter_is_start(@iStart) = True) or
+        (gtk_text_iter_get_char(@iStart) = Ord(#10))) then
+      begin
+        IsList := False;
+        gtk_text_iter_forward_char(@iStart);
+        gtk_text_iter_forward_char(@iStart);
+      end;
+    end;
+    {$ENDIF}
   end;
   iBeginning := iStart;
   // Go down
   IsList := True;
   while IsList = True do
   begin
+
     if gtk_text_iter_is_end(@iStart) = True then
     begin
       IsList := False;
       Exit;
     end
-    else if ((gtk_text_iter_equal(@iStart, @iBeginning)) or
-      (gtk_text_iter_get_char(@iStart) = Ord(LineEnding))) then
+    else
+    // modified by Artyom Stetsenko
+    if ((gtk_text_iter_equal(@iStart, @iBeginning)) or
+      (gtk_text_iter_get_char(@iStart) = Ord({$IFNDEF WINDOWS}LineEnding{$ELSE}#10{$ENDIF})))
+    then
     begin
-      if gtk_text_iter_get_char(@iStart) = Ord(LineEnding) then
+      if gtk_text_iter_get_char(@iStart) = Ord({$IFNDEF WINDOWS}LineEnding{$ELSE}#10{$ENDIF}) then
       begin
         gtk_text_iter_forward_char(@iStart);
-        if ((gtk_text_iter_get_char(@iStart) = Ord(LineEnding)) or
+        if ((gtk_text_iter_get_char(@iStart) = Ord({$IFNDEF WINDOWS}LineEnding{$ELSE}#10{$ENDIF})) or
           (gtk_text_iter_is_end(@iStart) = True)) then
         begin
           IsList := False;
@@ -643,7 +664,7 @@ begin
         if gtk_text_iter_get_char(@iEndNum) = Ord(#9) then
           IsTab := True;
         if ((gtk_text_iter_get_char(@iEndNum) = Ord(#9)) or
-          (gtk_text_iter_get_char(@iEndNum) = Ord(LineEnding)) or
+          (gtk_text_iter_get_char(@iEndNum) = Ord({$IFNDEF WINDOWS}LineEnding{$ELSE}#10{$ENDIF})) or
           (gtk_text_iter_is_end(@iEndNum) = True)) then
           Break;
       end;

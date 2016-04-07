@@ -1,0 +1,7 @@
+Use GTK2 in Windows
+
+In Lasarus main menu:
+Package -> Open Loaded Package... -> find LCL -> find Win32WSControls -> Use module
+                                              -> Parameters -> Path -> Other Units (-Fu)  -> add $(TargetOS)
+                                              
+
